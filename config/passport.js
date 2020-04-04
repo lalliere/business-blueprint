@@ -1,3 +1,4 @@
+/*
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
@@ -47,3 +48,4 @@ passport.deserializeUser(function(obj, cb) {
 
 // Exporting our configured passport
 module.exports = passport;
+*/
