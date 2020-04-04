@@ -10,7 +10,9 @@
     "fix": "eslint --fix .",
     "watch": "nodemon server.js"
   },
-  "pre-commit": ["test"],
+  "pre-commit": [
+    "test"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
