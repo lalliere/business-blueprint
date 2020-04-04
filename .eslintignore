@@ -1,6 +1,3 @@
-models
+models/index.js
 node_modules
 config/config.js
-public
-server.js
-routes
