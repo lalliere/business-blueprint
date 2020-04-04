@@ -1,5 +1,5 @@
 // Requiring our models and passport as we've configured it
-//const db = require("../models");
+const db = require("../models");
 const { Router } = require("express");
 
 const api = Router();
@@ -31,9 +31,17 @@ const api = Router();
       });
   });
  */
-api.get("/api/test", function(req, res) {
-  res.json("db testing for hannah ");
+
+
+
+api.get("/api/managers", function(req, res) {
+  db.Manager.findAll({}).then(function(dbManager) {
+    res.json(dbManager);
+  });
 });
+
+
+
 //on button click redirect
 // Route for logging user out
 api.get("/logout", function(req, res) {
