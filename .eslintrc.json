@@ -32,7 +32,7 @@
       "no-unused-vars": "error",
       "no-use-before-define": "error",
       "no-redeclare": "error",
-      "camelcase": "error",
+      "camelcase": "warn",
       "brace-style": "error",
       "indent": [
           "error",
@@ -40,7 +40,7 @@
       ],
       "quotes": [
           "error",
-          "single"
+          "double"
       ],
       "semi": [
           "error",

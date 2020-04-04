@@ -1,5 +1,5 @@
 // Requiring our models and passport as we've configured it
-const db = require("../models");
+//const db = require("../models");
 const { Router } = require("express");
 
 const api = Router();
