@@ -34,6 +34,9 @@
         "no-redeclare": "error",
         "camelcase": "warn",
         "brace-style": "error",
+        "no-async-promise-executor": "warn",
+        "no-misleading-character-class": "warn",
+        "no-useless-catch": "warn",
         "indent": [
             "error",
             2
