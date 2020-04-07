@@ -1,16 +1,17 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = function(sequelize, DataTypes) {
   const Order = sequelize.define("Order", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    }
+      customer_id: {
+          type:DataTypes.INTEGER,
+          allowNull: false
+        },
+        description: {
+          type:DataTypes.STRING,
+          allowNull: false
+        },
+        amount: {
+          type:DataTypes.DECIMAL(10,2),
+          allowNull: false
+        },
   });
-  Order.associate = function(models) {
-    models.Customer.belongsTo(models.Customer);
-  };
-  Order.associate = function(models) {
-    models.Customer.hasOne(models.Invoice);
-  };
   return Order;
 };
