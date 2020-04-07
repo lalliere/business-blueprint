@@ -9,6 +9,11 @@ form.login {
   background-color: #E6E7EC;
 }
 
+.entry-nav {
+  background-color: #455E9C;
+}
+
+
 .waves-effect.waves-sidenav .waves-ripple {
   background-color: rgba(69, 94, 156, 0.651);
 }
