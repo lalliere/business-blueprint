@@ -32,15 +32,12 @@ const api = Router();
   });
  */
 
-
-
+//get all managers
 api.get("/api/managers", function(req, res) {
   db.Manager.findAll({}).then(function(dbManager) {
     res.json(dbManager);
   });
 });
-
-
 
 //on button click redirect
 // Route for logging user out
