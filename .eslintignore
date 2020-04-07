@@ -1,4 +1,5 @@
 models/index.js
 node_modules
 config/config.js
+seeders
 public/js
