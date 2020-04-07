@@ -1,8 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const { Router } = require("express");
-const invRoutes = require('./api-InvRoutes')
-
+const invRoutes = require("./api-InvRoutes");
 
 const api = Router();
 
@@ -55,8 +54,7 @@ api.get("/api/getcustomer", function(req, res) {
   res.json("here is a som string");
 });
 
-
 // Routes for connecting to invoice middleware
-invRoutes.api(api)
+invRoutes.api(api); //<----this ain't staying fyi......
 
 module.exports = api;
