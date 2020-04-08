@@ -6,27 +6,24 @@ const item = Router();
 
 //get all items by name
 item.get("/items/", function(req, res) {
-  db.item.findAll({}).then(function(dbitem) {
+  db.Item.findAll({}).then(function(dbitem) {
     res.json(dbitem);
   });
 });
 
 //get a specific item by name
-item.get("/items/:item_name", function(req, res) {
-  db.item
-    .findAll({
-      where: {
-        item_name: req.params.itemName,
-        cost: req.params.price
-      }
-    })
-    .then(function(dbitem) {
-      res.json(dbitem);
-    });
+item.get("/item/:itemName", function(req, res) {
+  db.Item.findOne({
+    where: {
+      item_name: req.params.itemName
+    }
+  }).then(function(dbitem) {
+    res.json(dbitem);
+  });
 });
 
 //get a specific item by id
-item.get("/items/:id", function(req, res) {
+item.get("/item/:id", function(req, res) {
   db.item
     .findAll({
       where: {
@@ -38,25 +35,41 @@ item.get("/items/:id", function(req, res) {
     });
 });
 
+//Tested
 // POST route for saving a new item
 item.post("/item/addNew", function(req, res) {
   console.log(req.body);
   db.Item.create({
-    item_name: req.params.itemName,
-    cost: parseInt(req.params.price)
+    item_name: req.body.itemName,
+    cost: parseInt(req.body.itemPrice)
   }).then(function(dbPost) {
     res.json(dbPost);
   });
 });
 
-// DELETE route for deleting item
-item.delete("/item/posts/:id", function(req, res) {
-  db.Post.destroy({
+
+//Tested
+//PUT route for updating an item
+item.put("/item/update/:id", function(req, res) {
+  db.Item.update(req.body, {
     where: {
       id: req.params.id
     }
-  }).then(function(dbPost) {
-    res.json(dbPost);
+  }).then(function() {
+    res.json("Price has been updated");
+  });
+});
+
+//tested
+// DELETE route for deleting item
+item.delete("/item/:id", function(req, res) {
+  console.log("hello");
+  db.Item.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function() {
+    res.json("Item deleted successfully.");
   });
 });
 
