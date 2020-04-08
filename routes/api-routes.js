@@ -2,8 +2,6 @@
 const db = require("../models");
 const { Router } = require("express");
 const invRoutes = require("./api-InvRoutes");
-
-
 const api = Router();
 
 ///for now
@@ -54,7 +52,6 @@ api.get("/api/getcustomer", function(req, res) {
   // Sending back a password, even a hashed password, isn't a good idea
   res.json("here is a som string");
 });
-
 
 // Routes for connecting to invoice middleware
 api.use(invRoutes);
