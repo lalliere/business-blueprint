@@ -1,17 +1,17 @@
 const db = require("../models");
-const _ = require("underscore");
+//const _ = require("underscore");
 const Op = db.Sequelize.Op;
 
 module.exports = {
   // function for creating a new customer
   postCustomerApi: async function(req, res) {
-    console.log(req.body)
+    console.log(req.body);
     const dbCustomer = await db.Customer.create(req.body);
     res.json(dbCustomer);
   },
   // function for creating a new sales order
   postOrderApi: async function(req, res) {
-    console.log("Body:", req.body)
+    console.log("Body:", req.body);
     const dbOrder = await db.Order.create(req.body);
     res.json(dbOrder);
   },
@@ -42,7 +42,7 @@ module.exports = {
       totalPaid = totalPaid + amount;
     }
     const dbInvoices = await db.Invoice.findAll({ where: { id: invoiceId } });
-    console.log(invoiceId, dbInvoices[0].total_amount)
+    console.log(invoiceId, dbInvoices[0].total_amount);
     // evaluate whether the invoice has been paid in full
     let isPaid;
     if (dbInvoices[0].total_amount - req.body.discount - totalPaid > 0) {
@@ -136,25 +136,24 @@ module.exports = {
 
     // Get Paid and Unpaid Invoice report
     app.get("/api/invoice/report", (req, res) => {
-      console.log('Getting reports....')
+      console.log("Getting reports....");
       db.Invoice.findAll({ where: { paid: true } }).then(report1 => {
         if (report1) {
-          let paidreport = report1.map(item => item.dataValues)
+          let paidreport = report1.map(item => item.dataValues);
           db.Invoice.findAll({ where: { paid: false } }).then(report2 => {
-            let unpaidreport = report2.map(item => item.dataValues)
+            let unpaidreport = report2.map(item => item.dataValues);
             let report = {
-              'unpaid': unpaidreport,
-              'paid': paidreport
-            }
+              unpaid: unpaidreport,
+              paid: paidreport
+            };
             res.json(report);
-          })
+          });
+        } else {
+          console.log("Gand Marwao");
+          return "gand marwao";
         }
-        else {
-          console.log('Gand Marwao')
-          return "gand marwao"
-        }
-      })
-    })
+      });
+    });
 
     // Create a new invoice
     app.post("/api/invoices", this.postInvoiceApi);
@@ -168,7 +167,9 @@ module.exports = {
         ).then(function(dbInvoice) {
           if (req.body.discount) {
             // if we are updating the discount, we have to reevaluate whether the invoice has been paid in full
-            db.Invoice.findAll({ where: { id: req.params.id } }).then(function( dbInvoices ) {
+            db.Invoice.findAll({ where: { id: req.params.id } }).then(function(
+              dbInvoices
+            ) {
               let isPaid;
               if (
                 dbInvoices[0].total_amount -

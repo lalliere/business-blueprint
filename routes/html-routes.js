@@ -12,6 +12,16 @@ route.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
+route.get("/addnew", function(req, res) {
+  // If the user already has an account send them to the members page
+  /*if (req.user) {
+    res.redirect("/something");
+  }*/
+  res.sendFile(path.join(__dirname, "../public/addNew.html"));
+});
+
+
+
 route.get("/login", function(req, res) {
   // If the user already has an account send them to the members page
   /* if (req.user) {
