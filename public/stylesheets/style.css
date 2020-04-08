@@ -27,6 +27,12 @@ form.login {
   font-family: 'Do Hyeon', sans-serif;
 }
 
+.logintextwhite {
+  color: #FFFFFF;
+  font-weight: bolder;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
 .top-nav {
   background-color: #E6E7EC;
 }

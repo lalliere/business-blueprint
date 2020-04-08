@@ -23,31 +23,31 @@ route.get("/search", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/search.html"));
 });
 
-route.get("/add-new", function(req, res) {
+route.get("/addnew", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/addNew.html"));
 });
 
-route.get("/create-customer", function(req, res) {
+route.get("/createcustomer", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/create-customer.html"));
 });
 
-route.get("/create-invoice", function(req, res) {
+route.get("/createinvoice", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/create-invoice.html"));
 });
 
-route.get("/create-sales-order", function(req, res) {
+route.get("/createsalesorder", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/create-sales-order.html"));
 });
 
-route.get("/pdf-invoice", function(req, res) {
+route.get("/pdfinvoice", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/pdf-invoice.html"));
 });
 
-route.get("/search-invoice", function(req, res) {
+route.get("/searchinvoice", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/search-invoice.html"));
 });
 
-route.get("/stat-invoice", function(req, res) {
+route.get("/statinvoice", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/stat-invoice.html"));
 });
 module.exports = route;
