@@ -134,46 +134,6 @@ router.put("/api/invoices/:id", function(req, res) {
       if (req.body.discount) {
         // if we are updating the discount, we have to reevaluate whether the invoice has been paid in full
         db.Invoice.findAll({ where: { id: req.params.id } }).then(function( dbInvoices ) {
-          
-    // Update an invoice
-    app.put("/api/invoices/:id", function(req, res) {
-      if (req.body.salesorder_id) {
-        db.Invoice.update(
-          { salesorder_id: req.body.salesorder_id },
-          { where: { id: req.params.id } }
-        ).then(function(dbInvoice) {
-          if (req.body.discount) {
-            // if we are updating the discount, we have to reevaluate whether the invoice has been paid in full
-            db.Invoice.findAll({ where: { id: req.params.id } }).then(function(
-              dbInvoices
-            ) {
-              let isPaid;
-              if (
-                dbInvoices[0].total_amount -
-                  req.body.discount -
-                  dbInvoices[0].amount_paid >
-                0
-              ) {
-                isPaid = false;
-              } else {
-                isPaid = true;
-              }
-              db.Invoice.update(
-                { discount: req.body.discount, paid: isPaid },
-                { where: { id: req.params.id } }
-              ).then(function(dbInvoice) {
-                res.json(dbInvoice);
-              });
-            });
-          } else {
-            res.json(dbInvoice);
-          }
-        });
-      } else if (req.body.discount) {
-        db.Invoice.findAll({ where: { id: req.params.id } }).then(function(
-          dbInvoices
-        ) {
-          // if we are updating the discount, we have to reevaluate whether the invoice has been paid in full
           let isPaid;
           if (
             dbInvoices[0].total_amount -
@@ -350,7 +310,7 @@ router.put("/api/payments/:id", function(req, res) {
                                   }
                                   db.Invoice.update(
                                     {
-                                      amount_paid: totalPaid, 
+                                      amount_paid: totalPaid,
                                       paid: isPaid
                                     },
                                     { where: { id: invoiceId } }
