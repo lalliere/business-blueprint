@@ -17,7 +17,7 @@ item.get("/items/:item_name", function(req, res) {
     .findAll({
       where: {
         item_name: req.params.itemName,
-        price: req.params.price
+        cost: req.params.price
       }
     })
     .then(function(dbitem) {
@@ -41,11 +41,9 @@ item.get("/items/:id", function(req, res) {
 // POST route for saving a new item
 item.post("/item/addNew", function(req, res) {
   console.log(req.body);
-  db.Post.create({
-    first_name: req.body.CuFirstName,
-    last_name: req.body.CuLastName,
-    email: req.body.CuEmail,
-    phone_number: req.body.CuPhone
+  db.Item.create({
+    item_name: req.params.itemName,
+    cost: parseInt(req.params.price)
   }).then(function(dbPost) {
     res.json(dbPost);
   });
