@@ -4,101 +4,11 @@ const { Router } = require("express");
 const route = Router();
 // Requiring our custom middleware for checking if a user is logged in
 
-route.get("/addNew", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/addNew.html"));
-});
 
-route.get("/createcustomer", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/create-customer.html"));
-});
-
-route.get("/createinvoice", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/create-invoice.html"));
-});
-
-route.get("/createsalesorder", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/create-sales-order.html"));
-});
-
-route.get("/members", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/members.html"));
-});
-
-route.get("/pdfinvoice", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/pdf-invoice.html"));
-});
-
-route.get("/searchinvoice", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/search-invoice.html"));
-});
-
-route.get("/search", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/search.html"));
-});
-
-route.get("/statinvoice", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/stat-invoice.html"));
-});
-//----------------------------
 route.get("/", function(req, res) {
   // If the user already has an account send them to the members page
   /*if (req.user) {
     res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/home.html"));
-});
-
-route.get("/addnew", function(req, res) {
-  // If the user already has an account send them to the members page
-  /*if (req.user) {
-    res.redirect("/something");
-  }*/
-  res.sendFile(path.join(__dirname, "../public/addNew.html"));
-});
-
-
-
-//***EL: TRAVIS: do we still have a login/signup page?
-route.get("/login", function(req, res) {
-  // If the user already has an account send them to the members page
-  /* if (req.user) {
-    res.redirect("/members");
   }*/
   res.sendFile(path.join(__dirname, "../public/home.html"));
 });
@@ -127,10 +37,6 @@ route.get("/create-invoice", function(req, res) {
 
 route.get("/create-sales-order", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/create-sales-order.html"));
-});
-
-route.get("/index", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 route.get("/pdf-invoice", function(req, res) {
