@@ -2,7 +2,6 @@
 const db = require("../models");
 const { Router } = require("express");
 const invRoutes = require("./api-InvRoutes");
-
 const api = Router();
 
 ///for now
@@ -55,6 +54,6 @@ api.get("/api/getcustomer", function(req, res) {
 });
 
 // Routes for connecting to invoice middleware
-invRoutes.api(api); //<----this ain't staying fyi......
+api.use(invRoutes);
 
 module.exports = api;
