@@ -32,11 +32,11 @@
         "no-unused-vars": "error",
         "no-use-before-define": "error",
         "no-redeclare": "error",
-        "camelcase": "warn",
+        "camelcase": "off",
         "brace-style": "error",
-        "no-async-promise-executor": "warn",
-        "no-misleading-character-class": "warn",
-        "no-useless-catch": "warn",
+        "no-async-promise-executor": "off",
+        "no-misleading-character-class": "off",
+        "no-useless-catch": "off",
         "indent": [
             "error",
             2
