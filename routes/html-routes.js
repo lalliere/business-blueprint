@@ -10,7 +10,7 @@ route.get("/", function(req, res) {
   /*if (req.user) {
     res.redirect("/something");
   }*/
-  res.sendFile(path.join(__dirname, "../public/home.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 // Here we've add our isAuthenticated middleware to this route.
