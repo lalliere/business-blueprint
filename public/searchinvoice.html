@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Invoice</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Page Title -->
+        <div class="row bg-soft-black py-3 page-container">
+            <div class="col text-center text-white">
+                <h4>Searching Invoice</h4>
+            </div>
+        </div>
+        <!-- top navbar for small screen -->
+        <ul id="nav-mobile" class="sidenav sidenav-fixed" styler="transform: translate(0px);">
+            <li class="logo">
+              <div id="logo-container" class="brand-logo"></div>
+              <img id="navbar-logo" type="image" src="./assets/b3Blue.png"
+                style="width: 130px; height: 130px; margin-left: 85px; margin-top: 10px"></img>
+            </li>
+        
+            <li>
+              <h6 style="text-align: center;"><a id="logo-name" href="/members">Business Blueprint</a></h6>
+            </li>
+        
+            <li>
+              <div class="divider"></div>
+            </li>
+        
+            <div>
+              <h6 style="padding: 10px; color: gray">Customers</h6>
+            </div>
+        
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/search">Search</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/addNew">Add New</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0">Invoicing</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li>
+                        <a href="/createsalesorder">Create New Sales Order</a>
+                      </li>
+                      <li>
+                        <a href="/searchsalesorder">Search Sales Order</a>
+                      </li>
+                      <li>
+                        <a href="/createinvoice">Generate New Invoice</a>
+                      </li>
+                      <li>
+                        <a href="/searchinvoice">Search for an Invoice</a>
+                      </li>
+                      <li>
+                        <a href="/statinvoice">View Invoice Statistics</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+        
+            <li>
+              <div class="divider"></div>
+            </li>
+        
+            <li>
+              <h6 style="padding: 10px; color: gray">Employees</h6>
+            </li>
+        
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">See Employee
+                    Information</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Search by
+                    Manager</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Add New Employee
+                    or Manager</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+    
+            <div class="col-sm-12 col-lg-10 bg-light py-5 px-lg-5" style="position: absolute; right: 800px;">
+                <!-- SEARCH SECTION -->
+                <div class="row m-0">
+                    <div class="container-fluid bg-yellow p-4">
+                        <div class="row mb-2">
+                            <div class="col-sm-12 col-md-5"><input type="text" class="form-control" id="search-term"
+                                    placeholder="search an invoice ..."></div>
+                            <div class="col-sm-12 col-md-auto text-md-right pt-2">
+                                <label for="address">Search by:
+                                </label></div>
+                            <div class="col-sm-12 col-md-3 px-md-0">
+                                <select class="form-control" id="search-by">
+                                    <option>Invoice Number</option>
+                                    <option>Sales Order Number</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 mt-3 col-md-2 mt-md-0 ">
+                                <button class="btn btn-primary" id="search-btn">Search</button></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- RESULT SECTION -->
+                <!-- This section should be hidden on page load. -->
+                <div class="row m-0 mt-5">
+                    <div id="result-header" class="container-fluid">
+                        <!-- Table header-->
+                        <div class="row table-header">
+                            <div class="col-3"> Invoice #</div>
+                            <div class="col-3"> Sales Order #</div>
+                            <div class="col-3"> Invoice Date #</div>
+                            <div class="col-3 text-right"> Invoice Amount</div>
+                        </div>
+                    </div>
+                    <!-- Result Header Container for showing newly created customers. -->
+                    <div id="result-container" class="container-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+    <script src="./js/searchinvoice.js"></script>
+</body>
+
+</html>
