@@ -1,176 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="stylesheets/style.css">
-        
-        <title>Search</title>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
 
-    <body>
-        
-      <nav class="top-nav">
-        <div class="nav-wrapper">
-          <a class="brand-logo center" id="logo-name" href="members.html">Bobby's Beats</a>
-          <div class="right" style="margin-right: 10px">
-            <a href="/" class="btn waves-effect waves-light light-blue darken-4">Logout</a>
-          </div>
-        </div>
-      </nav>
-  
-      <div class="container">
-        <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger full hide-on-large-only"><i class="material-icons">menu</i></a>
+  <title>Search</title>
+</head>
+
+<body>
+
+
+  <nav class="top-nav">
+    <div class="nav-wrapper">
+      <a class="brand-logo center" id="logo-name" href="/members">Bobby's Beats</a>
+      <div class="right" style="margin-right: 10px">
+        <a href="/" class="btn waves-effect waves-light light-blue darken-4">Logout</a>
       </div>
-  
-      <ul id="nav-mobile" class="sidenav sidenav-fixed" styler="transform: translate(0px);">
-        <li class="logo">
-          <div id="logo-container" class="brand-logo"></div>
-          <img id="navbar-logo" type="image" src="./assets/b3Blue.png" style="width: 130px; height: 130px; margin-left: 85px; margin-top: 10px"></img>
-        </li>
-  
-        <li>
-          <h6 style="text-align: center;"><a id="logo-name" href="/public/members">Business Blueprint</a></h6>
-        </li> 
-  
-        <li>
-          <div class="divider"></div>
-        </li>
-  
-        <div>
-          <h6 style="padding: 10px; color: gray">Customers</h6>
-        </div>
-  
-        <li class="no-padding">
-          <ul class="collapsible collapsible-accordion">
-            <li class="bold">
-              <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/public/search">Search</a>
-            </li>
-  
-            <li class="bold">
-              <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/public/addNew">Add New</a>
-            </li>
-  
-            <li class="bold">
-              <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0">Invoicing</a>
-              <div class="collapsible-body">
-                <ul>
-                  <li>
-                    <a href="/public/create-sales-order">Create New Sales Order</a>
-                  </li>
-                  <li>
-                    <a href="/public/create-invoice">Generate New Invoice</a>
-                  </li>
-                  <li>
-                    <a href="/public/search-invoice">Search for an Invoice</a>
-                  </li>
-                  <li>
-                    <a href="/public/stat-invoice">View Invoice Statistics</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger full hide-on-large-only"><i
+        class="material-icons">menu</i></a>
+  </div>
+
+  <ul id="nav-mobile" class="sidenav sidenav-fixed" styler="transform: translate(0px);">
+    <li class="logo">
+      <div id="logo-container" class="brand-logo"></div>
+      <img id="navbar-logo" type="image" src="./assets/b3Blue.png"
+        style="width: 130px; height: 130px; margin-left: 85px; margin-top: 10px"></img>
+    </li>
+
+    <li>
+      <h6 style="text-align: center;"><a id="logo-name" href="/members">Business Blueprint</a></h6>
+    </li>
+
+    <li>
+      <div class="divider"></div>
+    </li>
+
+    <div>
+      <h6 style="padding: 10px; color: gray">Customers</h6>
+    </div>
+
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/search">Search</a>
         </li>
 
-        <li>
-          <div class="divider"></div>
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/addNew">Add New</a>
         </li>
-  
-        <li>
-          <h6 style="padding: 10px; color: gray">Employees</h6>
+
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0">Invoicing</a>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a href="/createsalesorder">Create New Sales Order</a>
+              </li>
+              <li>
+                <a href="/createinvoice">Generate New Invoice</a>
+              </li>
+              <li>
+                <a href="/searchinvoice">Search for an Invoice</a>
+              </li>
+              <li>
+                <a href="/statinvoice">View Invoice Statistics</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        
-        <li class="no-padding">
-          <ul class="collapsible collapsible-accordion">
-            <li class="bold">
-              <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">See Employee Information</a>
-            </li>
-  
-            <li class="bold">
-              <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Search by Manager</a>
-            </li>
-  
-            <li class="bold">
-              <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Add New Employee or Manager</a>
-            </li>
-          </ul>
-        </li> 
       </ul>
-       
-        
-      <div class="container right">
-          <h3 class="subpageH1">SEARCH</h3>
+    </li>
 
-          <div class="row">
-            <div class="input-field col s4">
-                <select>
-                    <option value="" disabled selected>Search By...</option>
-                    <option value="1" onclick="custNameOpts: show">Customer Name</option>
-                    <option value="2">Customer Phone Number</option>
-                    <option value="3">Customer ID</option>
-                    <option value="4">Order ID</option>
-                    <option value="5">Invoice ID</option>
-                </select>
-                <label>Choose your Search Option</label>
-            </div>
+    <li>
+      <div class="divider"></div>
+    </li>
 
-            <div  class="col s8 custNameOpts">
-              <div class="input-field col s6">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="first_name" type="text">
-                <label for="first_name">First Name</label>
-              </div>
-            
+    <li>
+      <h6 style="padding: 10px; color: gray">Employees</h6>
+    </li>
 
-              <div class="input-field col s6">
-                  <input id="last_name" type="text">
-                  <label for="last_name">Last Name</label>
-              </div> 
-            </div>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">See Employee
+            Information</a>
+        </li>
 
-            <div hidden class="input-field col s6 custPhoneOpts">
-              <i class="material-icons prefix">phone</i>
-              <input id="icon_telephone" type="tel">
-              <label for="icon_telephone">Telephone</label>
-            </div>
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Search by
+            Manager</a>
+        </li>
 
-            <div hidden class="input-field col s6 custIdOpts">
-              <i class="material-icons prefix">assignment_ind</i>
-              <input id="cust_id" type="number">
-              <label for="cust_id">Customer ID #</label>
-            </div>
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Add New Employee
+            or Manager</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 
-            <div hidden class="input-field col s6 orderIdOpts">
-              <i class="material-icons prefix">description</i>
-              <input id="order_id" type="number">
-              <label for="order_id">Order ID</label>
-            </div>
 
-            <div hidden class="input-field col s6 invoiceIdOpts">
-              <i class="material-icons prefix">local_atm</i>
-              <input id="inv_id" type="number">
-              <label for="inv_id">Invoice ID</label>
-            </div>
+  <div class="container right">
+    <h3 class="subpageH1">SEARCH</h3>
 
-          </div>
-
-          <div class="row" style="margin-right: 10px" id="searchResults">
-            <h4 class="resultsHeader">SEARCH RESULTS</h4>
-            <div class="resultsBody">
-            </div>
-          </div>
-
+    <div class="row">
+      <div class="input-field col s4">
+        <select>
+          <option value="" disabled selected>Search By...</option>
+          <option value="1" onclick="custNameOpts: show">Customer Name</option>
+          <option value="2">Customer Phone Number</option>
+          <option value="3">Customer ID</option>
+          <option value="4">Order ID</option>
+          <option value="5">Invoice ID</option>
+        </select>
+        <label>Choose your Search Option</label>
       </div>
-    
-        
 
-        
-        <!-- [<div class="container">
+      <div class="col s8 custNameOpts">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="first_name" type="text">
+          <label for="first_name">First Name</label>
+        </div>
+
+
+        <div class="input-field col s6">
+          <input id="last_name" type="text">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+
+      <div hidden class="input-field col s6 custPhoneOpts">
+        <i class="material-icons prefix">phone</i>
+        <input id="icon_telephone" type="tel">
+        <label for="icon_telephone">Telephone</label>
+      </div>
+
+      <div hidden class="input-field col s6 custIdOpts">
+        <i class="material-icons prefix">assignment_ind</i>
+        <input id="cust_id" type="number">
+        <label for="cust_id">Customer ID #</label>
+      </div>
+
+      <div hidden class="input-field col s6 orderIdOpts">
+        <i class="material-icons prefix">description</i>
+        <input id="order_id" type="number">
+        <label for="order_id">Order ID</label>
+      </div>
+
+      <div hidden class="input-field col s6 invoiceIdOpts">
+        <i class="material-icons prefix">local_atm</i>
+        <input id="inv_id" type="number">
+        <label for="inv_id">Invoice ID</label>
+      </div>
+
+    </div>
+
+    <div class="row" style="margin-right: 10px" id="searchResults">
+      <h4 class="resultsHeader">SEARCH RESULTS</h4>
+      <div class="resultsBody">
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- [<div class="container">
             <div class="row">
                 <h1 class="col s12 center-align">Search</h1>
             </div>
@@ -192,18 +198,18 @@
             </div>
         </div>
         ] -->
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <!-- <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="container">
             <div class="row">
                 <form class="col s12">
                     <div class="row">
@@ -242,10 +248,10 @@
             </button>
         </div> -->
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        
-        <script type="text/javascript" src="js/members.js"></script>
-    </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script type="text/javascript" src="js/members.js"></script>
+</body>
 
 </html>
