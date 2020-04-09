@@ -4,12 +4,14 @@ const { Router } = require("express");
 
 const item = Router();
 
+//Tested
 //get all items by name
 item.get("/items/", function(req, res) {
   db.Item.findAll({}).then(function(dbitem) {
     res.json(dbitem);
   });
 });
+
 
 //get a specific item by name
 item.get("/item/:itemName", function(req, res) {
