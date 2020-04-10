@@ -2,19 +2,19 @@
 
 # Business Blueprint
 
-
 Business Blueprint allows any small business to keep track of their day to day operations
 
 
-## Getting Started
+## Usage
 
-This application will allow a business owner to:
+This application will allow a business owner to securely:
 - Add customers to their database
 - Add inventory items to their database
-- Create and keep track of customer invoices
+- Create and keep track of customer invoices and sales
+- Search for invoices, customer, and employee information
 
 
-## Technology Used
+## Technologies Used
 
 - Node.js
 - Express Web Server
@@ -33,6 +33,12 @@ This application will allow a business owner to:
 
 <img src="./public/assets/landingPage.png">
 
+## Future Developement
+
+We would like to add the following features in the future:
+- ?
+- ?
+- ?
 
 ## Acknowledgments
 
