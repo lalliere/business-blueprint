@@ -7,7 +7,7 @@ Business Blueprint allows any small business to keep track of their day to day o
 
 ## Usage
 
-This application will allow a business owner to securely:
+This application will allow a business owner to:
 - Add customers to their database
 - Add inventory items to their database
 - Create and keep track of customer invoices and sales
@@ -25,8 +25,8 @@ This application will allow a business owner to securely:
 
 ## Deployment
 
+- https://github.com/lalliere/project-2
 - Heroku url?
-- Git Hub url?
 
 
 ## Preview
@@ -36,9 +36,9 @@ This application will allow a business owner to securely:
 ## Future Developement
 
 We would like to add the following features in the future:
-- ?
-- ?
-- ?
+- The ability to manage all employee information, schedules, and payroll
+- Automatically notify any customer who is late on a payment
+- Make the application as mobile friendly as possible
 
 ## Acknowledgments
 
