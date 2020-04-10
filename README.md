@@ -1,6 +1,9 @@
 # Business Blueprint
+<img src="./public/assets/bb3Blue.png">
+
 
 Business Blueprint allows any small business to keep track of their day to day operations
+
 
 ## Getting Started
 
@@ -24,6 +27,7 @@ This application will allow a business owner to:
 - Heroku url?
 - Git Hub url?
 
+
 ## Preview
 
 <img src="./public/assets/landingPage.png">
@@ -31,4 +35,4 @@ This application will allow a business owner to:
 
 ## Acknowledgments
 
-* Cheers to Michael FearsNothing and DJ Bobby Beats for all of their help
+* Cheers to Michael FearsNothing and DJ Bobby Beats for all of their expertise 
