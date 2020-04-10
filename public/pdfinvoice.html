@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Update/Delete Invoice</title>
-    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
@@ -21,20 +22,89 @@
             </div>
         </div>
         <!-- top navbar for small screen -->
-        <div class="row">
-            <div class="col m-0 p-0">
-                <div class="topnav-toprow">
-                    <ul class="topnav bg-navy">
-                        <li><a href="./create-customer.html">Create Customer Account</a></li>
-                        <li><a href="./create-sales-order.html">Create Sales Order</a></li>
-                        <li><a href="./create-invoice.html">Generate Invoice</a></li>
-                        <li><a href="./search-invoice.html">Search Invoice</a></li>
-                        <li><a href="./stat-invoice.html">Invoice Statistics</a></li>
-                    </ul>
-                </div>
+        <ul id="nav-mobile" class="sidenav sidenav-fixed" styler="transform: translate(0px);">
+            <li class="logo">
+              <div id="logo-container" class="brand-logo"></div>
+              <img id="navbar-logo" type="image" src="./assets/b3Blue.png"
+                style="width: 130px; height: 130px; margin-left: 85px; margin-top: 10px"></img>
+            </li>
+        
+            <li>
+              <h6 style="text-align: center;"><a id="logo-name" href="/members">Business Blueprint</a></h6>
+            </li>
+        
+            <li>
+              <div class="divider"></div>
+            </li>
+        
+            <div>
+              <h6 style="padding: 10px; color: gray">Customers</h6>
             </div>
-        </div>
-            <div class="col-sm-12 col-lg-10 bg-light p-lg-5 p-md-3">
+        
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/search">Search</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/addNew">Add New</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0">Invoicing</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li>
+                        <a href="/createsalesorder">Create New Sales Order</a>
+                      </li>
+                      <li>
+                        <a href="/searchsalesorder">Search Sales Order</a>
+                      </li>
+                      <li>
+                        <a href="/createinvoice">Generate New Invoice</a>
+                      </li>
+                      <li>
+                        <a href="/searchinvoice">Search for an Invoice</a>
+                      </li>
+                      <li>
+                        <a href="/statinvoice">View Invoice Statistics</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+        
+            <li>
+              <div class="divider"></div>
+            </li>
+        
+            <li>
+              <h6 style="padding: 10px; color: gray">Employees</h6>
+            </li>
+        
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">See Employee
+                    Information</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Search by
+                    Manager</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Add New Employee
+                    or Manager</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+    
+            <div class="col-sm-12 col-lg-10 bg-light p-lg-5 p-md-3" style="position: absolute; right: 200px;">
                 <div class="row">
                     <div class="col text-center">
                         <h3 id="invoice-number">INVOICE # XXXXXXXX</h3>
@@ -105,7 +175,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/pdf-invoice.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+    <script src="./js/pdfinvoice.js"></script>
 </body>
 
 </html>

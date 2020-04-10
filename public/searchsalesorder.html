@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Sales Order</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Page Title -->
+        <div class="row bg-soft-black py-3 page-container" style="position: absolute; right: 700px;">
+            <div class="col text-center text-white">
+                <h4>Searching Sales Order</h4>
+            </div>
+        </div>
+        <!-- top navbar for small screen -->
+        <ul id="nav-mobile" class="sidenav sidenav-fixed" styler="transform: translate(0px);">
+            <li class="logo">
+              <div id="logo-container" class="brand-logo"></div>
+              <img id="navbar-logo" type="image" src="./assets/b3Blue.png"
+                style="width: 130px; height: 130px; margin-left: 85px; margin-top: 10px"></img>
+            </li>
+        
+            <li>
+              <h6 style="text-align: center;"><a id="logo-name" href="/members">Business Blueprint</a></h6>
+            </li>
+        
+            <li>
+              <div class="divider"></div>
+            </li>
+        
+            <div>
+              <h6 style="padding: 10px; color: gray">Customers</h6>
+            </div>
+        
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/search">Search</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/addNew">Add New</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0">Invoicing</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li>
+                        <a href="/createsalesorder">Create New Sales Order</a>
+                      </li>
+                      <li>
+                        <a href="/searchsalesorder">Search Sales Order</a>
+                      </li>
+                      <li>
+                        <a href="/createinvoice">Generate New Invoice</a>
+                      </li>
+                      <li>
+                        <a href="/searchinvoice">Search for an Invoice</a>
+                      </li>
+                      <li>
+                        <a href="/statinvoice">View Invoice Statistics</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+        
+            <li>
+              <div class="divider"></div>
+            </li>
+        
+            <li>
+              <h6 style="padding: 10px; color: gray">Employees</h6>
+            </li>
+        
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">See Employee
+                    Information</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Search by
+                    Manager</a>
+                </li>
+        
+                <li class="bold">
+                  <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Add New Employee
+                    or Manager</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+            <!-- ********************************************** -->
+            <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+            <div class="col-sm-12 col-lg-10 bg-light py-5 px-lg-5" style="position: absolute; right: 800px; top: 100px;">
+                <!-- SEARCH SECTION -->
+                <div class="row m-0">
+                    <div class="container-fluid bg-yellow p-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4">
+                                <input type="text" id="search-term" class="form-control"
+                                    placeholder="search a sales order...">
+                            </div>
+                            <div class="col-sm-12 col-md-2 text-md-right pt-2">
+                                <label for="address">Search by:</label>
+                            </div>
+                            <div class="col-sm-12 col-md-auto px-md-0">
+                                <select class="form-control" id="search-by">
+                                    <option>Order Number</option>
+                                    <option>Customer Account Number</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 mt-3 col-md-2 mt-md-0 ">
+                                <button type="button" class="btn btn-primary" id="search-btn">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- RESULT SECTION -->
+                <!-- This section should be hidden on page load. -->
+                <!-- Result Header. It's hidden on page load -->
+                <div class="row m-0 mt-5">
+                    <div id="result-header" class="container-fluid d-none">
+                        <!-- Table header-->
+                        <div class="row table-header">
+                            <div class="col-2"> Sales Order #</div>
+                            <div class="col-2"> Customer Account #</div>
+                            <div class="col-6"> Sales Order Description</div>
+                            <div class="col-2 text-right"> Amount</div>
+                        </div>
+                    </div>
+                    <!-- Result Header Container for showing newly created customers. -->
+                    <div id="result-container" class="container-fluid">
+                        <!-- results to be shown here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+    <script src="./js/searchSalesOrder.js"></script>
+</body>
+
+</html>

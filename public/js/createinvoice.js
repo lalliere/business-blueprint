@@ -78,7 +78,7 @@ function activateGenerateButtons() {
 
                 //create session storage of invoice id
                 sessionStorage.setItem("id", inv.data.dbInvoice.id);
-                window.location.href = "./pdf-invoice.html";
+                window.location.href = "./pdfinvoice.html";
               })
               .catch(err => console.log(err))
             })
@@ -108,6 +108,7 @@ function activatePDFButtons() {
       })
       .then(function(inv) {
         // insert into payment table
+        // console.log(inv)
         axios.post("/api/payments", {
             invoice_id: inv.data.dbInvoice.id,
             amount: payAmountEl.value
@@ -115,7 +116,9 @@ function activatePDFButtons() {
           .then(function(pmt) {
             // update invoice summary
             axios.get(`/api/salesorders/${orderIdEl.value}`).then(order => {
-              const invoice_no = inv.data.id;
+              // console.log(order);
+
+              const invoice_no = inv.data.dbInvoice.id;
               const invoiceTotal = "$" + order.data[0].amount;
               const paidAmount = "$" + inv.data.dbInvoice.amount_paid;
               const discount =  "$" + inv.data.dbInvoice.discount;
@@ -181,7 +184,7 @@ function renderSalesOrder(order, orderSubReportContainer) {
   // show sub report section
   subReportSectionContainer.setAttribute("class", "container-fluid");
   // show result the found sales order
-  orderSubReportContainer.innerHTML = `<div class="col-3">${order.id}</div>
-                                         <div class="col-7"> ${order.description} </div>
+  orderSubReportContainer.innerHTML = `<div class="col-2">${order.id}</div>
+                                         <div class="col-2"> ${order.description} </div>
                                          <div class="col-2 text-right"> ${order.amount}</div>`;
 }

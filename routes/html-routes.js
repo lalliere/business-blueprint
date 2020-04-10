@@ -11,6 +11,10 @@ route.get("/members", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/members.html"));
 });
 
+route.get("/searchsalesorder", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/searchsalesorder.html"));
+});
+
 route.get("/search", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/search.html"));
 });
@@ -24,27 +28,27 @@ route.get("/updatedelete", function(req, res) {
 });
 
 route.get("/createcustomer", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/create-customer.html"));
+  res.sendFile(path.join(__dirname, "../public/createcustomer.html"));
 });
 
 route.get("/createinvoice", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/create-invoice.html"));
+  res.sendFile(path.join(__dirname, "../public/createinvoice.html"));
 });
 
 route.get("/createsalesorder", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/create-sales-order.html"));
+  res.sendFile(path.join(__dirname, "../public/createsalesorder.html"));
 });
 
 route.get("/pdfinvoice", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/pdf-invoice.html"));
+  res.sendFile(path.join(__dirname, "../public/pdfinvoice.html"));
 });
 
 route.get("/searchinvoice", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/search-invoice.html"));
+  res.sendFile(path.join(__dirname, "../public/searchinvoice.html"));
 });
 
 route.get("/statinvoice", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/stat-invoice.html"));
+  res.sendFile(path.join(__dirname, "../public/statinvoice.html"));
 });
 
 route.get("/", function(req, res) {
