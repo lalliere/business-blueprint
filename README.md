@@ -1,5 +1,5 @@
-# Business Blueprint
 <img src="./public/assets/bb3Blue.png">
+# Business Blueprint
 
 
 Business Blueprint allows any small business to keep track of their day to day operations
