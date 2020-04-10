@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Updates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Crete+Round|IBM+Plex+Serif|Tajawal&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-wrapper">
+            <a class="brand-logo center" id="logo-name" href="/members">Bobby's Beats</a>
+            <div class="right" style="margin-right: 10px">
+                <a href="/index" class="btn waves-effect waves-light light-blue darken-4">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="#!" data-target="nav-mobile" class="top-nav sidenav-trigger full hide-on-large-only"><i
+                class="material-icons menu-icon">menu</i></a>
+    </div>
+
+    <ul id="nav-mobile" class="sidenav sidenav-fixed" styler="transform: translate(0px);">
+        <li class="logo">
+            <div id="logo-container" class="brand-logo"></div>
+            <img id="navbar-logo" type="image" src="./assets/b3Blue.png"
+                style="width: 130px; height: 130px; margin-left: 85px; margin-top: 10px"></img>
+        </li>
+
+        <li>
+            <h6 style="text-align: center;"><a id="app-name" href="/members">Business Blueprint</a></h6>
+        </li>
+
+        <li>
+            <div class="divider"></div>
+        </li>
+
+        <div>
+            <h6 style="padding: 10px; color: gray">Customers</h6>
+        </div>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0"
+                        href="/search">Search</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/addNew">Add
+                        New</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0"
+                        href="/upd-del">Update or Delete</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0">Invoicing</a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <a href="/createsalesorder">Create New Sales Order</a>
+                            </li>
+                            <li>
+                                <a href="/createinvoice">Generate New Invoice</a>
+                            </li>
+                            <li>
+                                <a href="/searchinvoice">Search for an Invoice</a>
+                            </li>
+                            <li>
+                                <a href="/statinvoice">View Invoice Statistics</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <div class="divider"></div>
+        </li>
+
+        <li>
+            <h6 style="padding: 10px; color: gray">Employees</h6>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">See
+                        Employee Information</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Search
+                        by Manager</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Add New
+                        Employee or Manager</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="mainWrapper container right">
+
+        <h3 class="subpageH1 center-align">UPDATE OR DELETE</h3>
+
+
+        <div class="row">
+            <div class="col s1 l2"></div>
+            <div class="updDelPage col s10 l9">
+                <ul class="collapsible center">
+                    <li>
+                        <div class="collapsible-header addNewCH">
+                            <a class="CHText"><i class="material-icons">contacts</i>Update or Delete Customer</a>
+                        </div>
+                        <div class="collapsible-body addNewCB">
+                            <div id="udCust">
+                                <div class="row">
+                                    <form class="col s12" id="client-form">
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <h6 style="text-align: left; color: #4A5066">Search for the Customer:
+                                                </h6>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <input id="udCustFirst" type="text" class="validate">
+                                                <label for="udCustFirst">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="udCustLast" type="text" class="validate">
+                                                <label for="udCustLast">Last Name</label>
+                                            </div>
+                                            <div class="col s1">
+                                                <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                        class="material-icons">send</i></a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 udCustSearchResults">
+                                                HANNAH - here's my vision but please, do your thing:
+                                                Maybe here you display the results from the customer table c and put a
+                                                button with the code -> check (for them to confirm)
+                                                <div class="col s1"><a
+                                                        class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                            class="material-icons">check</i></a></div>
+                                                And another button with the code -> edit (for them to edit what they put
+                                                in above, or maybe refresh the page or idk)
+                                                <div class="col s1"><a
+                                                        class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                            class="material-icons">edit</i></a></div>
+                                                When they press the check button, they confirm that the customer
+                                                displayed is the one they want to update and you display the next input
+                                                field section.
+
+                                            </div>
+
+
+                                            <div class="col s12">
+                                                <h6 style="text-align: left; color: #4A5066">You may update the
+                                                    following fields:</h6>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="uCustFirst" type="text" class="validate">
+                                                <label for="uCustFirst">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="uCustLast" type="text" class="validate">
+                                                <label for="uCustLast">Last Name</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <input id="uCustEmail" type="email" class="validate">
+                                                <label for="uCustEmail">Email</label>
+                                                <span class="helper-text"
+                                                    data-error="Please enter a valid email"></span>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="uCustPhone" type="tel" class="validate"
+                                                    pattern="^\d{3}-\d{3}-\d{4}$" required>
+                                                <label for="uCustPhone">Phone Number (i.e. xxx-xxx-xxxx)</label>
+                                                <span class="helper-text"
+                                                    data-error="Please enter a valid phone number in correct format"></span>
+                                            </div>
+                                        </div>
+                                        <button id="delCustBtn" class="btn waves-effect waves-light left deleteBtn"
+                                            type="submit" name="action">Delete Customer
+                                            <i class="material-icons right">delete</i>
+                                        </button>
+                                        <button id="updCustBtn" class="btn waves-effect waves-light udFSearchBtn"
+                                            type="submit" name="action">Submit Updates
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header addNewCH">
+                            <a class="CHText"><i class="material-icons">build</i>Update or Delete Item</a>
+                        </div>
+                        <div class="collapsible-body addNewCB">
+                            <div id="udItem">
+                                <div class="row">
+                                    <form class="col s12" id="item-form">
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <h6 style="text-align: left; color: #4A5066">Search for the Item:</h6>
+                                            </div>
+                                            <div class="input-field col s11">
+                                                <input id="udItemName" type="text" class="validate">
+                                                <label for="udItemName">Item Name</label>
+                                            </div>
+                                            <div class="col s1">
+                                                <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                        class="material-icons">send</i></a>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col s12 udCustSearchResults">
+                                                    HANNAH - here's my vision but please, do your thing:
+                                                    Maybe here you display the results from the customer table (they
+                                                    stay up) and put a button with the code -> check (for them to
+                                                    confirm)
+                                                    <div class="col s1"><a
+                                                            class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                                class="material-icons">check</i></a></div>
+                                                    And another button with the code -> edit (for them to edit what they
+                                                    put in above, or maybe refresh the page or idk)
+                                                    <div class="col s1"><a
+                                                            class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                                class="material-icons">edit</i></a></div>
+                                                    When they press the check button, they confirm that the customer
+                                                    displayed is the one they want to update and you display the next
+                                                    input field section.
+
+                                                </div>
+
+
+                                                <div class="col s12">
+                                                    <h6 style="text-align: left; color: #4A5066">You may update the
+                                                        following fields:</h6>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="uItemName" type="text" class="validate">
+                                                    <label for="uItemName">Item Name</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="uItemPrice" type="text" class="validate">
+                                                    <label for="uItemName">Item Price</label>
+                                                </div>
+                                            </div>
+
+                                            <button id="delCustBtn" class="btn waves-effect waves-light left deleteBtn"
+                                                type="submit" name="action">Delete Item
+                                                <i class="material-icons right">delete</i>
+                                            </button>
+                                            <button id="updCustBtn" class="btn waves-effect waves-light udFSearchBtn"
+                                                type="submit" name="action">Submit Updates
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header addNewCH">
+                            <a class="CHText"><i class="material-icons">account_circle</i>Update or Remove Employee</a>
+                        </div>
+                        <div class="collapsible-body addNewCB">
+                            <div id="udEmployee">
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <h6 style="text-align: left; color: #4A5066">Search for Employee:</h6>
+                                            </div>
+                                            <div class="input-field col s5">
+                                                <input id="udEmpFirst" type="text" class="validate">
+                                                <label for="udEmpFirst">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="udEmpLast" type="text" class="validate">
+                                                <label for="udEmpLast">Last Name</label>
+                                            </div>
+                                            <div class="col s1">
+                                                <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                        class="material-icons">send</i></a>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col s12 udCustSearchResults">
+                                                    HANNAH - here's my vision but please, do your thing:
+                                                    Maybe here you display the results from the customer table (they
+                                                    stay up) and put a button with the code -> check (for them to
+                                                    confirm)
+                                                    <div class="col s1"><a
+                                                            class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                                class="material-icons">check</i></a></div>
+                                                    And another button with the code -> edit (for them to edit what they
+                                                    put in above, or maybe refresh the page or idk)
+                                                    <div class="col s1"><a
+                                                            class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                                class="material-icons">edit</i></a></div>
+                                                    When they press the check button, they confirm that the customer
+                                                    displayed is the one they want to update and you display the next
+                                                    input field section.
+
+                                                </div>
+                                                <div class="col s12">
+                                                    <h6 style="text-align: left; color: #4A5066">You may update the
+                                                        following fields:</h6>
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <input id="uEmpFirst" type="text" class="validate">
+                                                    <label for="uEmpFirst">First Name</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="uEmpLast" type="text" class="validate">
+                                                    <label for="uEmpLast">Last Name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button id="delCustBtn" class="btn waves-effect waves-light left deleteBtn"
+                                            type="submit" name="action">Remove Employee
+                                            <i class="material-icons right">delete</i>
+                                        </button>
+                                        <button id="updCustBtn" class="btn waves-effect waves-light udFSearchBtn"
+                                            type="submit" name="action">Submit Updates
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col s1 l2"></div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="./js/addNewScript.js"></script>
+
+</body>
+
+</html>
