@@ -13,6 +13,9 @@ form.login {
   margin-top: 50px;
 }
 
+.menu-icon {
+  color: #455E9C;
+}
 .pacifico {
   font-family: 'Pacifico', cursive;
   text-align: center;
@@ -25,6 +28,13 @@ form.login {
   color: #455E9C;
   font-weight: bolder;
   font-family: 'Do Hyeon', sans-serif;
+}
+
+#app-name {
+  color: #455E9C;
+  font-weight: bolder;
+  font-family: 'Major Mono Display', monospace;
+  font-size: 2vw;
 }
 
 .logintextwhite {
@@ -50,6 +60,7 @@ form.login {
   font-weight: bolder;
   font-family: 'Major Mono Display', monospace;
   font-size: 3vw;
+  padding-left: 210px;
 }
 
 .nav-wrapper {
@@ -104,6 +115,13 @@ form.login {
   background-color: #455E9C;
 }
 
+.udFSearchBtn {
+  background-color: #9CB3C5;
+}
+
+.deleteBtn {
+  background-color: #4A5066;
+}
 /* label color */
 .input-field label {
   color: #455E9C;
