@@ -5,13 +5,13 @@
 Business Blueprint allows any small business to keep track of their day to day operations
 
 
-## Usage
+## Utilization
 
 This application will allow a business owner to:
 - Add customers to their database
 - Add inventory items to their database
 - Create and keep track of customer invoices and sales
-- Search for invoices, customer, and employee information
+- Search for invoices, sales orders, customer and employee information
 
 
 ## Technologies Used
@@ -32,6 +32,9 @@ This application will allow a business owner to:
 ## Preview
 
 <img src="./public/assets/landingPage.png">
+<img src="./public/assets/addNewPage.png">
+<img src="./public/assets/updatePage.png">
+<img src="./public/assets/searchPage.png">
 
 ## Future Developement
 
@@ -42,4 +45,4 @@ We would like to add the following features in the future:
 
 ## Acknowledgments
 
-* Cheers to Michael FearsNothing and DJ Bobby Beats for all of their expertise 
+* Cheers to Michael FearsNothing and DJ Bobby Beats for all of their expertise and help
