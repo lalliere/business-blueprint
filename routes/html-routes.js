@@ -23,6 +23,10 @@ route.get("/addnew", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/addNew.html"));
 });
 
+route.get("/updatedelete", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/updateDelete.html"));
+});
+
 route.get("/createcustomer", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/createcustomer.html"));
 });
