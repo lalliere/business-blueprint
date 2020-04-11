@@ -45,7 +45,6 @@ $("#cust-send-btn").click(function(req, res) {
     $("#hiddenCustId").val(response[0].id);
 
     id = response[0].id;
-
   });
 });
 
@@ -71,6 +70,7 @@ $("#updCustBtn1").click(function(req, res) {
     data: values
   }).then(function(response) {
     console.log(response);
+    alert("Customer updated successfully!")
   });
 });
 
@@ -83,6 +83,7 @@ $("#delCustBtn1").click(function(req, res) {
     method: "DELETE"
   }).then(function(response) {
     console.log("Success!")
+    alert("Customer successfully deleted!")
   })
 });
 
@@ -135,6 +136,7 @@ $("#updCustBtn2").click(function(req, res) {
     data: values
   }).then(function(response) {
     console.log(response);
+    alert("Item updated successfully!")
   });
 });
 
@@ -147,5 +149,6 @@ $("#delCustBtn2").click(function(req, res) {
     method: "DELETE"
   }).then(function(response) {
     console.log("Success!")
+    alert("Item deleted successfully!")
   })
 });

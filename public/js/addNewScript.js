@@ -26,6 +26,7 @@ $("#client-form").submit(function(event) {
     data: values
   }).then(function(response) {
     console.log(response);
+    alert("Customer added successfully!")
   });
 });
 
@@ -48,5 +49,6 @@ $("#item-form").submit(function(event) {
     data: values
   }).then(function(response) {
     console.log(response);
+    alert("Item added successfully!")
   });
 });
