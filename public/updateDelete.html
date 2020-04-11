@@ -178,28 +178,31 @@
                                                 <h6 style="text-align: left; color: #4A5066">You may update the
                                                     following fields:</h6>
                                             </div>
-                                            <div class="input-field col s6">
-                                                <input id="uCustFirst" type="text" class="validate">
-                                                <label for="uCustFirst">First Name</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input id="uCustLast" type="text" class="validate">
-                                                <label for="uCustLast">Last Name</label>
-                                            </div>
+                                            <form id="update-customer-form">
+                                                <div class="input-field col s6">
+                                                    <input id="uCustFirst" type="text" class="validate">
+                                                    <label for="uCustFirst">First Name</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="uCustLast" type="text" class="validate">
+                                                    <label for="uCustLast">Last Name</label>
+                                                </div>
 
-                                            <div class="input-field col s6">
-                                                <input id="uCustEmail" type="email" class="validate">
-                                                <label for="uCustEmail">Email</label>
-                                                <span class="helper-text"
-                                                    data-error="Please enter a valid email"></span>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input id="uCustPhone" type="tel" class="validate"
-                                                    pattern="^\d{3}-\d{3}-\d{4}$" required>
-                                                <label for="uCustPhone">Phone Number (i.e. xxx-xxx-xxxx)</label>
-                                                <span class="helper-text"
-                                                    data-error="Please enter a valid phone number in correct format"></span>
-                                            </div>
+                                                <div class="input-field col s6">
+                                                    <input id="uCustEmail" type="email" class="validate">
+                                                    <label for="uCustEmail">Email</label>
+                                                    <span class="helper-text"
+                                                        data-error="Please enter a valid email"></span>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="uCustPhone" type="tel" class="validate"
+                                                        pattern="^\d{3}-\d{3}-\d{4}$" required>
+                                                    <label for="uCustPhone">Phone Number (i.e. xxx-xxx-xxxx)</label>
+                                                    <span class="helper-text"
+                                                        data-error="Please enter a valid phone number in correct format"></span>
+                                                </div>
+                                                <input type="hidden" id="hiddenCustId" name="hiddenCustId">
+                                            </form>
                                         </div>
                                         <button id="delCustBtn1" class="btn waves-effect waves-light left deleteBtn"
                                             type="submit" name="action">Delete Customer
@@ -232,7 +235,7 @@
                                                 <label for="udItemName">Item Name</label>
                                             </div>
                                             <div class="col s1">
-                                                <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn" id="item-search-btn"> <i
                                                         class="material-icons">send</i></a>
                                             </div>
 
@@ -253,7 +256,6 @@
                                                     When they press the check button, they confirm that the customer
                                                     displayed is the one they want to update and you display the next
                                                     input field section.
-
                                                 </div>
 
 
