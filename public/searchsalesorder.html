@@ -9,8 +9,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="stylesheets/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
@@ -73,6 +71,9 @@
                 <a href="/createsalesorder">Create New Sales Order</a>
               </li>
               <li>
+                <a href="/searchsalesorder">Search for a Sales Order</a>
+              </li>
+              <li>
                 <a href="/createinvoice">Generate New Invoice</a>
               </li>
               <li>
@@ -117,7 +118,7 @@
 
   <!-- ********************************************** -->
   <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-  <div class="col-sm-12 col-lg-10 bg-light py-5 px-lg-5" style="position: absolute; right: 800px; top: 100px;">
+  <div class="col-sm-12 col-lg-10 bg-light py-5 px-lg-5" style="position: absolute; right: 200px; top: 100px;">
     <!-- SEARCH SECTION -->
     <div class="row m-0">
       <div class="container-fluid bg-yellow p-4">
@@ -144,15 +145,29 @@
     <!-- This section should be hidden on page load. -->
     <!-- Result Header. It's hidden on page load -->
     <div class="row m-0 mt-5">
-      <div id="result-header" class="container-fluid d-none">
+      <div id="result-header" class="container-fluid d-none hidden">
         <!-- Table header-->
-        <div class="row table-header">
+        <!-- <div class="row table-header">
           <div class="col-2"> Sales Order #</div>
           <div class="col-2"> Customer Account #</div>
           <div class="col-6"> Sales Order Description</div>
           <div class="col-2 text-right"> Amount</div>
         </div>
-      </div>
+      </div> -->
+      
+      <table id="table" class="highlight">
+        <thead id="table-head">
+          <tr>
+            <th>Sales Order #</th>
+            <th> Customer Account #</th>
+            <th> Description</th>
+            <th> Amount</th>
+            <th> Created At</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
       <!-- Result Header Container for showing newly created customers. -->
       <div id="result-container" class="container-fluid">
         <!-- results to be shown here -->
@@ -161,6 +176,8 @@
   </div>
   </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
   <script src="./js/searchSalesOrder.js"></script>

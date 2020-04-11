@@ -9,8 +9,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="stylesheets/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
@@ -73,6 +71,9 @@
                 <a href="/createsalesorder">Create New Sales Order</a>
               </li>
               <li>
+                <a href="/searchsalesorder">Search for a Sales Order</a>
+              </li>
+              <li>
                 <a href="/createinvoice">Generate New Invoice</a>
               </li>
               <li>
@@ -118,7 +119,7 @@
   <div class="col-sm-12 col-lg-10 bg-light p-lg-5 p-md-3" style="position: absolute; right: 200px;">
     <div class="row">
       <div class="col text-center">
-        <h3 id="invoice-number">INVOICE # XXXXXXXX</h3>
+        <h3 id="invoice-number">INVOICE STATISTICS</h3>
       </div>
     </div>
 
@@ -126,16 +127,28 @@
     <div id="piechart"></div>
 
     <!-- SALES ORDER SUB REPORT-->
-    <div class="row sub-report-section-text mt-5">
-      <div class="col p-0">
-        <h5>Sales Order</h5>
+    <div id="report-area" class="hidden">
+      <div class="row sub-report-section-text mt-5">
+        <div class="col p-0">
+          <h5>Sales Order</h5>
+        </div>
       </div>
-    </div>
-    <!-- Table header-->
-    <!-- <div class="col-2 text-center"> Created At</div> -->
-    <div class="row">
-      <div id="order-sub-report" class="container-fluid">
-        <!-- the found sales order is to show here -->
+      <!-- Table header-->
+      <!-- <div class="col-2 text-center"> Created At</div> -->
+      <div id="report-table" style="margin-bottom: 50px; margin-top: 20px;">
+        <table id="table" class="highlight">
+          <thead id="table-head">
+            <tr>
+              <th>Order ID</th>
+              <th>Sales Order ID</th>
+              <th>Total Amount</th>
+              <th>Discount</th>
+              <th>Amount Paid</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -154,6 +167,9 @@
   </div>
   </div>
   </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>

@@ -1,8 +1,8 @@
 // get session storage of invoice id
 // const fs = require("fs");
 const invoiceID = sessionStorage.getItem("id");
-const orderSubReportContainer = document.getElementById("order-sub-report");
-const paymentSubrptContainer = document.getElementById("payment-sub-report");
+const orderSubReportContainer = document.getElementById("order-table-body");
+const paymentSubrptContainer = document.getElementById("payment-table-body");
 // variables for invoice footer/summary
 let totalInvoiceAmt;
 let discount;
@@ -13,7 +13,7 @@ document.getElementById( "invoice-number" ).innerHTML = `INVOICE No. ${invoiceID
 // # show sub reports 'sales order'
 // ## get order id of the invoice
 axios.get(`/api/invoices/${invoiceID}`).then(invoice => {
-  console.log(invoice);
+  console.log("Invoice: ", invoice);
   console.log("order id: ", invoice.data.salesorder_id);
   // INVOICE FOOTER
   discount = invoice.data.discount;
@@ -30,6 +30,7 @@ axios.get(`/api/invoices/${invoiceID}`).then(invoice => {
 
     // INVOICE FOOTER
     totalInvoiceAmt = order.data[0].amount;
+    console.log("Orders", order)
 
     console.log("Total Invoice Amt: ", totalInvoiceAmt);
 
@@ -45,21 +46,26 @@ axios.get(`/api/invoices/${invoiceID}`).then(invoice => {
           totalPaidAmt = totalPaidAmt + parseFloat(res.data[i].amount);
         }
       }
-      console.log(results);
+      console.log("Results: ", results[0]);
       console.log("total paid: ", totalPaidAmt);
       renderPaymentSubRpt(results, paymentSubrptContainer);
 
       // INVOICE FOOTER/SUMMARY
+      let color;
       showInvoiceFooter();
       async function showInvoiceFooter() {
         const invoiceTotal = document.getElementById("invoice-total");
         const paidAmount = document.getElementById("paid-amount");
         const discountEl = document.getElementById("discounted-amount");
         const balanceDue = document.getElementById("balance-due");
+        if (balanceDue > 0)
+          color = "red";
+        else
+          color = "green";
 
-        const totalInvoice = await totalInvoiceAmt;
-        const discountAmt = await discount;
-        const totalPaid = await totalPaidAmt;
+        const totalInvoice = totalInvoiceAmt;
+        const discountAmt = discount;
+        const totalPaid = totalPaidAmt;
 
         // show footer
         invoiceTotal.innerHTML = "$" + parseFloat(totalInvoice);
@@ -73,15 +79,15 @@ axios.get(`/api/invoices/${invoiceID}`).then(invoice => {
       document.getElementById("pdf-btn").addEventListener("click", function() {
         // convertToPDF();
         // open in new tap;
-        order_report = document.getElementById('order-sub-report').innerHTML;
-        console.log(order_report)
-        const order_no = document.getElementById('order-id').innerHTML
-        const description = document.getElementById('order-desc').innerHTML
-        const amount = document.getElementById('order-amt').innerHTML
+        // order_report = document.getElementById('order-sub-report').innerHTML;
+        // console.log(order_report)
+        // const order_no = document.getElementById('order-id').innerHTML
+        // const description = document.getElementById('order-desc').innerHTML
+        // const amount = document.getElementById('order-amt').innerHTML
 
-        const invoice_no = document.getElementById('payment-id').innerHTML
-        const paid_date = document.getElementById('payment-create').innerHTML
-        const paid_amount = document.getElementById('payment-amt').innerHTML
+        // const invoice_no = document.getElementById('payment-id').innerHTML
+        // const paid_date = document.getElementById('payment-create').innerHTML
+        // const paid_amount = document.getElementById('payment-amt').innerHTML
 
         const invoiceTotal = document.getElementById("invoice-total").innerHTML;
         const paidAmount = document.getElementById("paid-amount").innerHTML;
@@ -97,7 +103,7 @@ axios.get(`/api/invoices/${invoiceID}`).then(invoice => {
                 widths: [150, 'auto', 150],
                 body: [
                   [{text: 'Order #', fillColor: 'grey', color: 'white'}, {text: 'Description', fillColor: 'grey', color: 'white'}, {text: 'Amount', fillColor: 'grey', color: 'white'}],
-                  [order_no, description, `$ ${amount}`]
+                  [order.data[0].id, order.data[0].description, `$ ${order.data[0].amount}`]
                 ]
               }
             },
@@ -108,17 +114,17 @@ axios.get(`/api/invoices/${invoiceID}`).then(invoice => {
                 widths: [150, 'auto', 150],
                 body: [
                   [{text: 'Invoice #', fillColor: 'grey', color: 'white'}, {text: 'Paid Date', fillColor: 'grey', color: 'white'}, {text: 'Paid Amount', fillColor: 'grey', color: 'white'}],
-                  [invoice_no, paid_date, `$ ${paid_amount}`]
+                  [results[0].invoice_id, results[0].createdAt, `$ ${results[0].amount}`]
                 ]
               }
             },
-            // {text: 'Payment', style: 'header'},
+            {text: 'Invoice Details', style: 'header'},
             {
               style: 'tableExample',
               table: {
                 widths: ['auto', 'auto', 'auto', 'auto'],
                 body: [
-                  [{text: 'Invoice Total', fillColor: 'grey', color: 'white'}, {text: 'Paid Amount', fillColor: 'grey', color: 'white'}, {text: 'Balance', fillColor: 'grey', color: 'white'}, {text: 'Discounted Amount', fillColor: 'grey', color: 'red'}],
+                  [{text: 'Invoice Total', fillColor: 'grey', color: 'white'}, {text: 'Paid Amount', fillColor: 'grey', color: 'white'}, {text: 'Discount', fillColor: 'grey', color: 'white'}, {text: 'Balance Due', fillColor: 'grey', color: color}],
                   [`$ ${invoiceTotal}`, `$ ${paidAmount}`, `$ ${discountEl}`, `$ ${balanceDue}`]
                 ]
               }
@@ -134,18 +140,20 @@ axios.get(`/api/invoices/${invoiceID}`).then(invoice => {
 
 function renderSalesOrder(order, orderSubReportContainer) {
   // show result the found sales order
-  orderSubReportContainer.innerHTML = `<div id="order-id" class="col-2 text-center">${order.id}</div>
-                                         <div id="order-desc" class="col-8"> ${order.description} </div>
-                                         <div id="order-amt" class="col-2 text-right"> ${order.amount}</div>`;
+  orderSubReportContainer.innerHTML = `<tr>
+                                        <td>${order.id}</td>
+                                        <td> ${order.description} </td>
+                                        <td> ${order.amount}</td>
+                                      </tr>`;
 }
 
 function renderPaymentSubRpt(data, paymentSubrptContainer) {
   const innerHTML = data.map(function(payment) {
-    return `<div class="row sub-report-row sub-report-text py-1">
-                        <div id="payment-id" class="col-2 col-sm-2 col-md-2 text-center">${payment.invoice_id}</div>
-                        <div id="payment-create" class="col-4">${payment.createdAt}</div>
-                        <div id="payment-amt" class="col-6 text-right"> ${payment.amount} </div>
-                  </div>`;
+    return `<tr>
+              <td>${payment.invoice_id}</td>
+              <td>${payment.createdAt}</td>
+              <td> ${payment.amount} </td>
+            </tr>`;
   });
   paymentSubrptContainer.innerHTML = innerHTML.join("\n");
 }

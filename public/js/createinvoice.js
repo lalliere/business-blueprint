@@ -6,6 +6,7 @@ const pdfBtnEl = document.getElementById("pdf-btn");
 const searchBtnEl = document.getElementById("search-btn");
 const subReportSectionContainer = document.getElementById("sub-report-section");
 const orderSubReportContainer = document.getElementById("order-sub-report");
+const resultContainer = document.getElementById("hello");
 
 // search sales order
 searchBtnEl.addEventListener("click", e => {
@@ -19,7 +20,9 @@ searchBtnEl.addEventListener("click", e => {
     } else {
       // show sub reports
       // render sub reports: sales order & payment
+      resultContainer.classList.remove("hidden");
       renderSalesOrder(res.data[0], orderSubReportContainer);
+      
       // generate invoice
 
       activateGenerateButtons();
@@ -122,7 +125,13 @@ function activatePDFButtons() {
               const invoiceTotal = "$" + order.data[0].amount;
               const paidAmount = "$" + inv.data.dbInvoice.amount_paid;
               const discount =  "$" + inv.data.dbInvoice.discount;
-              const balanceDue = "$" + (order.data[0].amount - inv.data.dbInvoice.amount_paid - inv.data.dbInvoice.discount);
+              let balanceDue = (order.data[0].amount - inv.data.dbInvoice.amount_paid - inv.data.dbInvoice.discount);
+              let color = "blue";
+              if (balanceDue > 0)
+                color = "red";
+              else
+                color = "green";
+              balanceDue = "$" + balanceDue;
 
               const order_no = order.data[0].id
               const description = order.data[0].description
@@ -153,13 +162,13 @@ function activatePDFButtons() {
                       ]
                     }
                   },
-                  {text: 'Payment', style: 'header'},
+                  {text: 'Invoice Deatils', style: 'header'},
                   {
                     style: 'tableExample',
                     table: {
                       widths: ['auto', 'auto', 'auto', 'auto'],
                       body: [
-                        [{text: 'Invoice Total', fillColor: 'grey', color: 'white'}, {text: 'Paid Amount', fillColor: 'grey', color: 'white'}, {text: 'Balance', fillColor: 'grey', color: 'white'}, {text: 'Discounted Amount', fillColor: 'grey', color: 'red'}],
+                        [{text: 'Invoice Total', fillColor: 'grey', color: 'white'}, {text: 'Paid Amount', fillColor: 'grey', color: 'white'}, {text: 'Discount', fillColor: 'grey', color: 'white'}, {text: 'Balance Due', fillColor: 'grey', color: color}],
                         [`$ ${invoiceTotal}`, `$ ${paidAmount}`, `$ ${discount}`, `$ ${balanceDue}`]
                       ]
                     }
@@ -184,7 +193,9 @@ function renderSalesOrder(order, orderSubReportContainer) {
   // show sub report section
   subReportSectionContainer.setAttribute("class", "container-fluid");
   // show result the found sales order
-  orderSubReportContainer.innerHTML = `<div class="col-2">${order.id}</div>
-                                         <div class="col-2"> ${order.description} </div>
-                                         <div class="col-2 text-right"> ${order.amount}</div>`;
+  orderSubReportContainer.innerHTML = `<div class="row table-header">
+                                        <div class="col-2"> Order #: ${order.id}</div>
+                                        <div class="col-2"> Description: ${order.description}</div>
+                                        <div class="col-2 text-right"> Amount: ${order.amount}</div>
+                                      </div>`;
 }
