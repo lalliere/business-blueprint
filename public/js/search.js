@@ -1,5 +1,8 @@
 M.AutoInit();
 
+// const viewNames = document.getElementById("custNameOpts");
+// const searchChoices = document.getElementById("searchChoices");
+
 $("#search-form").submit(function(event) {
   event.preventDefault();
   var $inputs = $("#search-form :input");
@@ -29,3 +32,12 @@ $("#search-form").submit(function(event) {
     );
   });
 });
+
+$(function() {
+  $(".opts").hide();
+  $("#searchChoices").change(function() {
+    $(".opts").hide();
+    $("#" + $(this).val()).show();
+  });
+});
+
