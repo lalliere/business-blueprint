@@ -22,6 +22,7 @@ form.login {
   color: #455E9C;
   padding-top: 150px;
   padding-bottom: 15px;
+  font-size: 5vw;
 }
 
 .logintext {
@@ -53,14 +54,6 @@ form.login {
 
 .waves-effect.waves-sidenav .waves-ripple {
   background-color: rgba(69, 94, 156, 0.651);
-}
-
-#logo-name {
-  color: #455E9C;
-  font-weight: bolder;
-  font-family: 'Major Mono Display', monospace;
-  font-size: 3vw;
-  padding-left: 210px;
 }
 
 .nav-wrapper {
@@ -127,6 +120,26 @@ form.login {
   color: #455E9C;
 }
 
+@media only screen and (min-width: 999px) {
+  
+  #logo-name {
+    color: #455E9C;
+    font-weight: bolder;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 3vw;
+    padding-left: 210px;
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  
+  #logo-name {
+    color: #455E9C;
+    font-weight: bolder;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 3vw;
+  }
+}
      
 /* 
 font-family: 'Do Hyeon', sans-serif;
