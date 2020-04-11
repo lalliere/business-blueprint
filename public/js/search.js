@@ -14,7 +14,7 @@ $("#search-form").submit(function(event) {
 
     $.ajax({
         url: "/customers/",
-        method: "GET",
+        method: "POST",
         data: values
       }).then(function(response) {
         console.log(response);

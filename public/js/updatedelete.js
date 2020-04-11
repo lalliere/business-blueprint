@@ -7,7 +7,6 @@ M.AutoInit();
 
 $("#cust-send-btn").click(function(req, res) {
   event.preventDefault();
-  console.log("Test");
   // Get all the forms elements and their values in one step
   var $inputs = $("#client-form :input");
   console.log($inputs);
@@ -20,12 +19,11 @@ $("#cust-send-btn").click(function(req, res) {
   console.log(values);
 
   $.ajax({
-    url: "/customer/:first_name/:last_name",
+    url: "/customers/updatedelete",
     method: "POST",
     data: values
   }).then(function(response) {
     console.log(response);
+    $("#custSearchResults").text(JSON.stringify(response));
   });
-
-  //$("#custSearchResults").html(values);
 });

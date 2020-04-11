@@ -6,11 +6,11 @@ const customer = Router();
 
 //Tested
 //get a specific customer
-customer.get("/customers/:first_name/:last_name", function(req, res) {
+customer.post("/customers/updatedelete", function(req, res) {
   db.Customer.findAll({
     where: {
-      first_name: req.params.first_name,
-      last_name: req.params.last_name
+      first_name: req.body.first_name,
+      last_name: req.body.last_name
     }
   }).then(function(dbCustomer) {
     res.json(dbCustomer);
@@ -18,9 +18,14 @@ customer.get("/customers/:first_name/:last_name", function(req, res) {
 });
 
 //get all customers
-customer.get("/customers/", function(req, res) {
-  console.log(req);
-  db.Customer.findAll({}).then(function(dbCustomer) {
+customer.post("/customers/", function(req, res) {
+  console.log(req.body);
+  db.Customer.findAll({
+    where: {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name
+    }
+  }).then(function(dbCustomer) {
     res.json(dbCustomer);
   });
 });
@@ -54,13 +59,6 @@ customer.post("/customer/addNew", function(req, res) {
     res.json(dbPost);
   });
 });
-
-
-
-
-
-
-
 
 
 // DELETE route for deleting posts
