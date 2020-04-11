@@ -4,6 +4,7 @@ const { Router } = require("express");
 
 const customer = Router();
 
+//Tested
 //get a specific customer
 customer.get("/customers/:first_name/:last_name", function(req, res) {
   db.Customer.findAll({
@@ -18,10 +19,13 @@ customer.get("/customers/:first_name/:last_name", function(req, res) {
 
 //get all customers
 customer.get("/customers/", function(req, res) {
+  console.log(req);
   db.Customer.findAll({}).then(function(dbCustomer) {
     res.json(dbCustomer);
   });
 });
+
+
 
 //get a specific customer by id
 customer.get("/customers/:id", function(req, res) {

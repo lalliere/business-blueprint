@@ -149,12 +149,13 @@
                                                 <label for="udCustLast">Last Name</label>
                                             </div>
                                             <div class="col s1">
-                                                <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i
+                                                <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn" id="cust-send-btn"> <i
                                                         class="material-icons">send</i></a>
                                             </div>
                                         </div>
+                                    </form>
                                         <div class="row">
-                                            <div class="col s12 udCustSearchResults">
+                                            <div class="col s12 udCustSearchResults" id="custSearchResults">
                                                 HANNAH - here's my vision but please, do your thing:
                                                 Maybe here you display the results from the customer table c and put a
                                                 button with the code -> check (for them to confirm)
@@ -200,11 +201,11 @@
                                                     data-error="Please enter a valid phone number in correct format"></span>
                                             </div>
                                         </div>
-                                        <button id="delCustBtn" class="btn waves-effect waves-light left deleteBtn"
+                                        <button id="delCustBtn1" class="btn waves-effect waves-light left deleteBtn"
                                             type="submit" name="action">Delete Customer
                                             <i class="material-icons right">delete</i>
                                         </button>
-                                        <button id="updCustBtn" class="btn waves-effect waves-light udFSearchBtn"
+                                        <button id="updCustBtn1" class="btn waves-effect waves-light udFSearchBtn"
                                             type="submit" name="action">Submit Updates
                                             <i class="material-icons right">send</i>
                                         </button>
@@ -270,11 +271,11 @@
                                                 </div>
                                             </div>
 
-                                            <button id="delCustBtn" class="btn waves-effect waves-light left deleteBtn"
+                                            <button id="delCustBtn2" class="btn waves-effect waves-light left deleteBtn"
                                                 type="submit" name="action">Delete Item
                                                 <i class="material-icons right">delete</i>
                                             </button>
-                                            <button id="updCustBtn" class="btn waves-effect waves-light udFSearchBtn"
+                                            <button id="updCustBtn2" class="btn waves-effect waves-light udFSearchBtn"
                                                 type="submit" name="action">Submit Updates
                                                 <i class="material-icons right">send</i>
                                             </button>
@@ -345,11 +346,11 @@
                                             </div>
                                         </div>
 
-                                        <button id="delCustBtn" class="btn waves-effect waves-light left deleteBtn"
+                                        <button id="delCustBtn3" class="btn waves-effect waves-light left deleteBtn"
                                             type="submit" name="action">Remove Employee
                                             <i class="material-icons right">delete</i>
                                         </button>
-                                        <button id="updCustBtn" class="btn waves-effect waves-light udFSearchBtn"
+                                        <button id="updCustBtn3" class="btn waves-effect waves-light udFSearchBtn"
                                             type="submit" name="action">Submit Updates
                                             <i class="material-icons right">send</i>
                                         </button>
@@ -373,6 +374,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="./js/addNewScript.js"></script>
+    <script src="./js/updatedelete.js"></script>
 
 </body>
 

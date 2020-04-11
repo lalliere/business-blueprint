@@ -9,7 +9,6 @@ M.AutoInit();
 
 $("#client-form").submit(function(event) {
   event.preventDefault();
-  console.log("hello World")
   // Get all the forms elements and their values in one step
   var $inputs = $("#client-form :input");
   console.log($inputs);
