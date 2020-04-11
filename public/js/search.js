@@ -1,7 +1,5 @@
 M.AutoInit();
 
-// const viewNames = document.getElementById("custNameOpts");
-// const searchChoices = document.getElementById("searchChoices");
 
 $("#search-form").submit(function(event) {
   event.preventDefault();
