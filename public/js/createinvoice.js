@@ -10,6 +10,9 @@ const resultContainer = document.getElementById("hello");
 
 // search sales order
 searchBtnEl.addEventListener("click", e => {
+  document.getElementById("results").style["right"] = "0px"
+  document.getElementById("results").style["margin-right"] = "500px"
+
   axios.get(`/api/salesorders/${orderIdEl.value}`).then(res => {
     console.log(res);
     if (res.data.length === 0) {

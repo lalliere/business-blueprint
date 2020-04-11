@@ -8,6 +8,9 @@ const resultContainerEl = document.getElementById("table-body");
 document
   .getElementById("search-btn")
   .addEventListener("click", function(event) {
+    document.getElementById("results").style["right"] = 0;
+    document.getElementById("results").style["margin-right"] = "400px"
+    
     const searchByValue = searchByEl.value;
     if (searchStrEl.value === "" || !parseInt(searchStrEl.value)) {
       // do thing if search term is blank or not a number
