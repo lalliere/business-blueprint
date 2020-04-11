@@ -2,12 +2,15 @@ const searchStrEl = document.getElementById("search-term");
 const searchByEl = document.getElementById("search-by");
 // containers for showing search results
 const resultHeaderEl = document.getElementById("result-header");
-const resultContainerEl = document.getElementById("result-header");
+const resultContainerEl = document.getElementById("table-body");
 
 // adds click event to the button 'search'
 document
   .getElementById("search-btn")
   .addEventListener("click", function(event) {
+    document.getElementById("results").style["right"] = 0;
+    document.getElementById("results").style["margin-right"] = "400px"
+    
     const searchByValue = searchByEl.value;
     if (searchStrEl.value === "" || !parseInt(searchStrEl.value)) {
       // do thing if search term is blank or not a number
@@ -41,14 +44,16 @@ document
 // function that renders html with the search results
 function showResultHTML(data, resultContainer) {
   // shows the result header which was hidden on page load
+  resultHeaderEl.classList.remove("hidden")
   resultHeaderEl.setAttribute("class", "container-fluid");
   const innerHTML = data.map(function(order) {
-    return `<div class="row table-header">
-              <div class="col-2"> Sales Order #: ${order.id}</div>
-              <div class="col-2"> Customer Account #: ${order.customer_id}</div>
-              <div class="col-6"> Sales Order Description: ${order.description}</div>
-              <div class="col-2 text-right"> Amount: ${order.amount}</div>
-          </div>`;
+    return `<tr>
+              <td> ${order.id}</td>
+              <td> ${order.customer_id}</td>
+              <td> ${order.description}</td>
+              <td> ${order.amount}</td>
+              <td> ${order.createdAt}</td>
+          </tr>`;
   });
   resultContainer.innerHTML = innerHTML.join("\n");
   // add click event to each record of results

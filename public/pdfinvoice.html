@@ -9,8 +9,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="stylesheets/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
@@ -73,6 +71,9 @@
                 <a href="/createsalesorder">Create New Sales Order</a>
               </li>
               <li>
+                <a href="/searchsalesorder">Search for a Sales Order</a>
+              </li>
+              <li>
                 <a href="/createinvoice">Generate New Invoice</a>
               </li>
               <li>
@@ -118,7 +119,7 @@
   <div class="col-sm-12 col-lg-10 bg-light p-lg-5 p-md-3" style="position: absolute; right: 200px;">
     <div class="row">
       <div class="col text-center">
-        <h3 id="invoice-number">INVOICE # XXXXXXXX</h3>
+        <h3 id="invoice-number">INVOICE STATISTICS</h3>
       </div>
     </div>
     <!-- SALES ORDER SUB REPORT-->
@@ -128,10 +129,18 @@
       </div>
     </div>
     <!-- Table header-->
-    <div class="row table-header">
-      <div class="col-2 text-center"> Order #</div>
-      <div class="col-8"> Description</div>
-      <div class="col-2 text-right"> Amount</div>
+    <div id="order-list" class="row table-header">
+      <table id="table" class="highlight">
+        <thead id="table-head">
+          <tr>
+            <th>Order ID</th>
+            <th>Description</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="order-table-body">
+        </tbody>
+      </table>
     </div>
     <div id="order-sub-report" class="row sub-report-text">
       <!-- the found sales order is to show here -->
@@ -139,13 +148,23 @@
 
     <!-- PAYMENT SUB REPORT -->
     <div class="row mt-4 sub-report-section-text">
-      <div class="col p-0">Payments</div>
+      <div class="col p-0">
+        <h5>Payments</h5>
+      </div>
     </div>
     <!-- Table header-->
-    <div class="row table-header">
-      <div class="col-2 col-sm-2 col-md-2 text-center">Invoice No</div>
-      <div class="col-4"> Paid Date</div>
-      <div class="col-6 text-right"> Paid Amount </div>
+    <div id="payment list" class="row table-header">
+      <table id="table" class="highlight">
+        <thead id="table-head">
+          <tr>
+            <th>Invoice ID</th>
+            <th>Paid Date</th>
+            <th>Paid Amount</th>
+          </tr>
+        </thead>
+        <tbody id="payment-table-body">
+        </tbody>
+      </table>
     </div>
     <!-- Table row -->
     <div class="row">
@@ -183,6 +202,8 @@
   </div>
   </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

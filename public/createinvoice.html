@@ -10,11 +10,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="stylesheets/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script> -->
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script> -->
 </head>
 
 <body>
@@ -77,6 +75,9 @@
                 <a href="/createsalesorder">Create New Sales Order</a>
               </li>
               <li>
+                <a href="/searchsalesorder">Search for a Sales Order</a>
+              </li>
+              <li>
                 <a href="/createinvoice">Generate New Invoice</a>
               </li>
               <li>
@@ -119,14 +120,14 @@
     </li>
   </ul>
 
-  <div class="container-fluid" style="position: absolute; right: 0px;">
+  <div id="results" class="container-fluid" style="position: absolute; right: 600px; margin-top: 100px;">
     <!-- Page Title -->
     <div class="row bg-soft-black py-3 page-container">
       <div class="col text-center text-white">
         <h4>Generating Invoice</h4>
       </div>
     </div>
-    <div class="col-sm-12 col-lg-10 bg-light py-5 px-lg-5" style="position: absolute; right: 0px;">
+    <div class="col-sm-12 col-lg-10 bg-light py-5 px-lg-5">
       <!-- SEARCH SECTION -->
       <div class="row m-0">
         <div class="container-fluid bg-yellow">
@@ -146,8 +147,8 @@
 
       <!-- RESULT SECTION -->
       <!-- This section should be hidden on page load. -->
-      <div class="row m-0">
-        <div id="sub-report-section" class="container-fluid d-none" style="position: absolute; left:100px; right: 0px;">
+      <div id="hello" class="row m-0 hidden">
+        <div id="sub-report-section" class="container-fluid d-none" >
 
           <!-- SALES ORDER SUB REPORT-->
           <div class="row sub-report-section-text mt-5">
@@ -156,11 +157,7 @@
             </div>
           </div>
           <!-- Table header-->
-          <div class="row table-header">
-            <div class="col-2"> Order #</div>
-            <div class="col-2"> Description</div>
-            <div class="col-2 text-right"> Amount</div>
-          </div>
+          
           <div id="order-sub-report" class="row sub-report-text">
             <!-- the found sales order is to show here -->
           </div>
@@ -240,10 +237,13 @@
     <!-- end of content section -->
   </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./js/createinvoice.js"></script>
+  <script type="text/javascript" src="js/members.js"></script>
 </body>
 
 </html>
