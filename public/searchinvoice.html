@@ -115,53 +115,62 @@
       </ul>
     </li>
   </ul>
+  <div class="container right">
+    <h3 style="color:#4a5066;" class="center">SEARCH FOR AN INVOICE</h3>
+    <br>
+    <div class="col-sm-12 col-lg-10 bg-light py-5 px-lg-5">
+      <!-- SEARCH SECTION -->
+      <div class="row sm-12 text-center">
+       
+      </div>
 
-  <div class="col-sm-12 col-lg-10 bg-light py-5 px-lg-5" style="position: absolute; margin-top: 80px; right: 500px;">
-    <!-- SEARCH SECTION -->
-    <div class="row m-0">
-      <div class="container-fluid bg-yellow p-4">
-        <div class="row mb-2">
-          <div class="col-sm-12 col-md-5"><input type="text" class="form-control" id="search-term"
-              placeholder="search an invoice ..."></div>
-          <div class="col-sm-12 col-md-auto text-md-right pt-2">
-            <label for="address">Search by:
-            </label></div>
-          <div class="col-sm-12 col-md-3 px-md-0">
-            <select class="form-control" id="search-by">
-              <option>Invoice Number</option>
-              <option>Sales Order Number</option>
-            </select>
+      <div class="row m-0">
+        <div class="container-fluid bg-yellow p-4">
+          <div class="row mb-2">
+            <div class="col-sm-12 col-md-5"><input type="text" class="form-control" id="search-term"
+                placeholder="search an invoice ...">
+            </div>
+            <div class="col-sm-12 col-md-auto text-md-right pt-2">
+              <label for="address">Search by:
+              </label>
+            </div>
+            <div class="col-sm-12 col-md-3 px-md-0">
+              <select class="form-control" id="search-by">
+                <option>Invoice Number</option>
+                <option>Sales Order Number</option>
+              </select>
+            </div>
+            <div class="col-sm-12 mt-3 col-md-2 mt-md-0 ">
+              <button class="btn btn-primary" id="search-btn">Search</button>
+            </div>
           </div>
-          <div class="col-sm-12 mt-3 col-md-2 mt-md-0 ">
-            <button class="btn btn-primary" id="search-btn">Search</button></div>
+        </div>
+      </div>
+      <!-- RESULT SECTION -->
+      <!-- This section should be hidden on page load. -->
+      <div class="row m-0 mt-5">
+        <div id="result-header" class="container-fluid hidden">
+          <!-- Table header-->
+          <table id="table" class="highlight">
+            <thead id="table-head">
+              <tr>
+                <th>Invoice #</th>
+                <th>Sales Order #</th>
+                <th>Invoice Date</th>
+                <th>Invoice Amount</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+          </table>
+        </div>
+        <!-- Result Header Container for showing newly created customers. -->
+        <div id="result-container" class="container-fluid">
         </div>
       </div>
     </div>
-    <!-- RESULT SECTION -->
-    <!-- This section should be hidden on page load. -->
-    <div class="row m-0 mt-5">
-      <div id="result-header" class="container-fluid hidden">
-        <!-- Table header-->
-        <table id="table" class="highlight">
-          <thead id="table-head">
-            <tr>
-              <th>Invoice #</th>
-              <th>Sales Order #</th>
-              <th>Invoice Date</th>
-              <th>Invoice Amount</th>
-            </tr>
-          </thead>
-          <tbody id="table-body">
-          </tbody>
-        </table>
-      </div>
-      <!-- Result Header Container for showing newly created customers. -->
-      <div id="result-container" class="container-fluid">
-      </div>
-    </div>
   </div>
-  </div>
-  </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
