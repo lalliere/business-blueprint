@@ -23,7 +23,7 @@ searchBtnEl.addEventListener("click", e => {
     } else {
       // show sub reports
       // render sub reports: sales order & payment
-      resultContainer.classList.remove("hidden");
+      resultContainer.removeAttribute("hidden");
       renderSalesOrder(res.data[0], orderSubReportContainer);
       
       // generate invoice
@@ -194,11 +194,20 @@ function activatePDFButtons() {
 
 function renderSalesOrder(order, orderSubReportContainer) {
   // show sub report section
-  subReportSectionContainer.setAttribute("class", "container-fluid");
+  subReportSectionContainer.setAttribute("class", "container");
   // show result the found sales order
-  orderSubReportContainer.innerHTML = `<div class="row table-header">
-                                        <div class="col-2"> Order #: ${order.id}</div>
-                                        <div class="col-2"> Description: ${order.description}</div>
-                                        <div class="col-2 text-right"> Amount: ${order.amount}</div>
-                                      </div>`;
+  orderSubReportContainer.innerHTML = 
+  `<div class="row table-header">
+  <table>
+  <tr>
+  <th>Order #</th>
+  <th>Description</th>
+  <th>Amount ($)</th>
+  </tr>
+  <tr>
+  <td>${order.id}</td>
+  <td>${order.description}</td>
+  <td>${order.amount}</td>
+  </table>
+  </div>`;
 }

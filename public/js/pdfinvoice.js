@@ -14,7 +14,7 @@ document.getElementById( "invoice-number" ).innerHTML = `INVOICE No. ${invoiceID
 // ## get order id of the invoice
 axios.get(`/api/invoices/${invoiceID}`).then(invoice => {
   console.log("Invoice: ", invoice);
-  console.log("order id: ", invoice.data.salesorder_id);
+  console.log("Order ID: ", invoice.data.salesorder_id);
   // INVOICE FOOTER
   discount = invoice.data.discount;
   if (discount === null) {
