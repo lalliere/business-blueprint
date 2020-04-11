@@ -19,7 +19,7 @@
     <div class="nav-wrapper">
       <a class="brand-logo center" id="logo-name" href="/members">Bobby's Beats</a>
       <div class="right" style="margin-right: 10px">
-        <a href="/index" class="btn waves-effect waves-light light-blue darken-4">Logout</a>
+        <a href="/logout" class="btn waves-effect waves-light light-blue darken-4">Logout</a>
       </div>
     </div>
   </nav>
@@ -60,7 +60,8 @@
         </li>
 
         <li class="bold">
-          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/updateDelete">Update or
+          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/updateDelete">Update
+            or
             Delete</a>
         </li>
 
@@ -70,6 +71,9 @@
             <ul>
               <li>
                 <a href="/createsalesorder">Create New Sales Order</a>
+              </li>
+              <li>
+                <a href="/searchsalesorder">Search for a Sales Order</a>
               </li>
               <li>
                 <a href="/createinvoice">Generate New Invoice</a>
@@ -116,19 +120,27 @@
 
 
   <div class="container right">
-    <h3 class="subpageH1">SEARCH</h3>
-    <form action="/customers" method="GET" id="search-form">
-      <div class="row">
-        <div class="input-field col s4">
-          <select>
-            <option value="" disabled selected>Search By...</option>
-            <option value="1" onclick="custNameOpts: show">Customer Name</option>
-            <option value="2">Customer Phone Number</option>
-            <option value="3">Customer ID</option>
-            <option value="4">Order ID</option>
-            <option value="5">Invoice ID</option>
-          </select>
-          <label>Choose your Search Option</label>
+    <h3 class="subpageH1 center-align">SEARCH</h3>
+    <br>
+
+    <div class="row">
+      <div class="input-field col s3">
+        <select>
+          <option value="" disabled selected>Search By...</option>
+          <option value="1" onclick="custNameOpts: show">Customer Name</option>
+          <option value="2">Customer Phone Number</option>
+          <option value="3">Customer ID</option>
+          <option value="4">Order ID</option>
+          <option value="5">Invoice ID</option>
+        </select>
+        <label>Choose your Search Option</label>
+      </div>
+
+      <div class="col s8 custNameOpts">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="first_name" type="text">
+          <label for="first_name">First Name</label>
         </div>
 
         <div class="col s8 custNameOpts">
@@ -145,11 +157,15 @@
           </div>
         </div>
 
-        <div hidden class="input-field col s6 custPhoneOpts">
-          <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel">
-          <label for="icon_telephone">Telephone</label>
-        </div>
+      <div class="col s1">
+        <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i class="material-icons">send</i></a>
+      </div>
+
+      <div hidden class="input-field col s6 custPhoneOpts">
+        <i class="material-icons prefix">phone</i>
+        <input id="icon_telephone" type="tel">
+        <label for="icon_telephone">Telephone</label>
+      </div>
 
         <div hidden class="input-field col s6 custIdOpts">
           <i class="material-icons prefix">assignment_ind</i>
@@ -172,7 +188,7 @@
       <input type="submit" value="Submit">
     </form>
 
-    <div class="row" style="margin-right: 10px" id="searchResults">
+    <div class="row" style="margin-right: 10px; color: #4A5066;" id="searchResults">
       <h4 class="resultsHeader">SEARCH RESULTS</h4>
       <div class="resultsBody" id="resultsBody">
       </div>
