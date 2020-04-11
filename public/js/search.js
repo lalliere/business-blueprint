@@ -1,5 +1,6 @@
 M.AutoInit();
 
+
 $("#search-form").submit(function(event) {
   event.preventDefault();
   var $inputs = $("#search-form :input");
@@ -29,3 +30,12 @@ $("#search-form").submit(function(event) {
     );
   });
 });
+
+$(function() {
+  $(".opts").hide();
+  $("#searchChoices").change(function() {
+    $(".opts").hide();
+    $("#" + $(this).val()).show();
+  });
+});
+
