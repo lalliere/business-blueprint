@@ -26,7 +26,7 @@ This application will allow a business owner to:
 ## Deployment
 
 - https://github.com/lalliere/project-2
-- Heroku url?
+- https://dashboard.heroku.com/apps/bcs-project-2
 
 
 ## Preview
