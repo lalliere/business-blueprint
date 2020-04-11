@@ -60,7 +60,8 @@
         </li>
 
         <li class="bold">
-          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/updateDelete">Update or
+          <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/updateDelete">Update
+            or
             Delete</a>
         </li>
 
@@ -119,10 +120,11 @@
 
 
   <div class="container right">
-    <h3 class="subpageH1">SEARCH</h3>
+    <h3 class="subpageH1 center-align">SEARCH</h3>
+    <br>
 
     <div class="row">
-      <div class="input-field col s4">
+      <div class="input-field col s3">
         <select>
           <option value="" disabled selected>Search By...</option>
           <option value="1" onclick="custNameOpts: show">Customer Name</option>
@@ -146,6 +148,10 @@
           <input id="last_name" type="text">
           <label for="last_name">Last Name</label>
         </div>
+      </div>
+
+      <div class="col s1">
+        <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i class="material-icons">send</i></a>
       </div>
 
       <div hidden class="input-field col s6 custPhoneOpts">
@@ -174,7 +180,7 @@
 
     </div>
 
-    <div class="row" style="margin-right: 10px" id="searchResults">
+    <div class="row" style="margin-right: 10px; color: #4A5066;" id="searchResults">
       <h4 class="resultsHeader">SEARCH RESULTS</h4>
       <div class="resultsBody">
       </div>
