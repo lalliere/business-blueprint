@@ -11,10 +11,10 @@ item.get("/items/", function(req, res) {
     res.json(dbitem);
   });
 });
-
-
+//WORKS
 //get a specific item by name
-item.get("/item/:itemName", function(req, res) {
+item.get("/items/:itemName", function(req, res) {
+  console.log(req.body);
   db.Item.findOne({
     where: {
       item_name: req.params.itemName
@@ -49,23 +49,27 @@ item.post("/item/addNew", function(req, res) {
   });
 });
 
-
 //Tested
 //PUT route for updating an item
-item.put("/item/update/:id", function(req, res) {
-  db.Item.update(req.body, {
-    where: {
-      id: req.params.id
+item.put("/items/update/:id", function(req, res) {
+  db.Item.update(
+    {
+      item_name: req.body.uItemName,
+      cost: req.body.uItemPrice
+    },
+    {
+      where: {
+        id: req.params.id
+      }
     }
-  }).then(function() {
+  ).then(function() {
     res.json("Price has been updated");
   });
 });
 
 //tested
 // DELETE route for deleting item
-item.delete("/item/:id", function(req, res) {
-  console.log("hello");
+item.delete("/items/delete/:id", function(req, res) {
   db.Item.destroy({
     where: {
       id: req.params.id

@@ -4,21 +4,49 @@ const { Router } = require("express");
 
 const customer = Router();
 
+//WORKS
 //get a specific customer
-customer.get("/customers/:first_name/:last_name", function(req, res) {
+customer.post("/customers/updatedelete", function(req, res) {
   db.Customer.findAll({
     where: {
-      first_name: req.params.first_name,
-      last_name: req.params.last_name
+      first_name: req.body.udCustFirst,
+      last_name: req.body.udCustLast
     }
   }).then(function(dbCustomer) {
     res.json(dbCustomer);
   });
 });
 
+//WORKS
+//update a specific customer
+customer.put("/customers/update/:id", function(req, res) {
+  console.log(req.params.id);
+  let str = req.body.uCustPhone;
+  let newStr = str.replace(/-/g, "");
+  db.Customer.update({
+    first_name: req.body.uCustFirst,
+    last_name: req.body.uCustLast,
+    email: req.body.uCustEmail,
+    phone_number: newStr
+  }, {
+    where: {
+      id: req.params.id
+    }
+  }).then(function() {
+    //res.json(dbCustomer);
+    res.send(200);
+  });
+});
+
 //get all customers
-customer.get("/customers/", function(req, res) {
-  db.Customer.findAll({}).then(function(dbCustomer) {
+customer.post("/customers/", function(req, res) {
+  console.log(req.body);
+  db.Customer.findAll({
+    where: {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name
+    }
+  }).then(function(dbCustomer) {
     res.json(dbCustomer);
   });
 });
@@ -51,17 +79,9 @@ customer.post("/customer/addNew", function(req, res) {
   });
 });
 
-
-
-
-
-
-
-
-
 // DELETE route for deleting posts
-customer.delete("/customer/posts/:id", function(req, res) {
-  db.Post.destroy({
+customer.delete("/customers/delete/:id", function(req, res) {
+  db.Customer.destroy({
     where: {
       id: req.params.id
     }

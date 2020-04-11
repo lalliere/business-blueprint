@@ -143,12 +143,19 @@
           <label for="first_name">First Name</label>
         </div>
 
+        <div class="col s8 custNameOpts">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="first_name" name="first_name" type="text">
+            <label for="first_name">First Name</label>
+          </div>
 
-        <div class="input-field col s6">
-          <input id="last_name" type="text">
-          <label for="last_name">Last Name</label>
+
+          <div class="input-field col s6">
+            <input id="last_name" name="last_name" type="text">
+            <label for="last_name">Last Name</label>
+          </div>
         </div>
-      </div>
 
       <div class="col s1">
         <a class="btn-floating btn-med waves-effect waves-light udFSearchBtn"><i class="material-icons">send</i></a>
@@ -160,29 +167,30 @@
         <label for="icon_telephone">Telephone</label>
       </div>
 
-      <div hidden class="input-field col s6 custIdOpts">
-        <i class="material-icons prefix">assignment_ind</i>
-        <input id="cust_id" type="number">
-        <label for="cust_id">Customer ID #</label>
-      </div>
+        <div hidden class="input-field col s6 custIdOpts">
+          <i class="material-icons prefix">assignment_ind</i>
+          <input id="cust_id" type="number">
+          <label for="cust_id">Customer ID #</label>
+        </div>
 
-      <div hidden class="input-field col s6 orderIdOpts">
-        <i class="material-icons prefix">description</i>
-        <input id="order_id" type="number">
-        <label for="order_id">Order ID</label>
-      </div>
+        <div hidden class="input-field col s6 orderIdOpts">
+          <i class="material-icons prefix">description</i>
+          <input id="order_id" type="number">
+          <label for="order_id">Order ID</label>
+        </div>
 
-      <div hidden class="input-field col s6 invoiceIdOpts">
-        <i class="material-icons prefix">local_atm</i>
-        <input id="inv_id" type="number">
-        <label for="inv_id">Invoice ID</label>
+        <div hidden class="input-field col s6 invoiceIdOpts">
+          <i class="material-icons prefix">local_atm</i>
+          <input id="inv_id" type="number">
+          <label for="inv_id">Invoice ID</label>
+        </div>
       </div>
-
-    </div>
+      <input type="submit" value="Submit">
+    </form>
 
     <div class="row" style="margin-right: 10px; color: #4A5066;" id="searchResults">
       <h4 class="resultsHeader">SEARCH RESULTS</h4>
-      <div class="resultsBody">
+      <div class="resultsBody" id="resultsBody">
       </div>
     </div>
 
@@ -192,7 +200,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
 </body>
 
 </html>
