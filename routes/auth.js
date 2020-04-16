@@ -45,10 +45,10 @@ router.get("/logout", (req, res) => {
   req.logout();
 
   let returnTo = req.protocol + "://" + req.hostname;
-  let port = req.connection.localPort;
-  if (port !== undefined && port !== 80 && port !== 443) {
-    returnTo += ":" + port;
-  }
+  //let port = req.connection.localPort;
+  //if (port !== undefined && port !== 80 && port !== 443) {
+  //  returnTo += ":" + port;
+  //}
 
   let logoutURL = new url.URL(
     util.format("https://%s/v2/logout", process.env.AUTH0_DOMAIN)
